@@ -1,34 +1,21 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        temp
-      </h1>
-      <h2 class="subtitle">
-        A Website Made for the Hawaiian Angels
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green"
-          >Documentation</a
-        >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-          >GitHub</a
-        >
-      </div>
-    </div>
-  </section>
+  <b-container fluid>
+    <b-row>
+      <b-col sm="12">
+        <Home-Banner />
+      </b-col>
+      <b-col>
+        <h1>Hello World!</h1>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
+import HomeBanner from '@/components/HomeBanner.vue'
 export default {
   components: {
-    Logo
+    'Home-Banner': HomeBanner
   }
 }
 </script>
