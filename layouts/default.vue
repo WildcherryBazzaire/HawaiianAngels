@@ -1,8 +1,18 @@
 <template>
   <div>
-    <nuxt />
+    <Investors-Page></Investors-Page>
+    <!--<nuxt />-->
   </div>
 </template>
+
+<script>
+import investors from '@/pages/investors.vue'
+export default {
+  components: {
+    'Investors-Page': investors
+  }
+}
+</script>
 
 <style>
 html {
