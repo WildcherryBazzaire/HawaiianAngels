@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="main">
     <Investors-Page></Investors-Page>
     <!--<nuxt />-->
   </div>
@@ -61,5 +61,9 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+#main {
+  overflow-x: hidden;
 }
 </style>
