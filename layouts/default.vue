@@ -1,5 +1,6 @@
 <template>
   <div id="main">
+    <Application-Page></Application-Page>
     <Investors-Page></Investors-Page>
     <!--<nuxt />-->
   </div>
@@ -7,9 +8,11 @@
 
 <script>
 import investors from '@/pages/investors.vue'
+import application from '@/pages/application.vue'
 export default {
   components: {
-    'Investors-Page': investors
+    'Investors-Page': investors,
+    'Application-Page': application
   }
 }
 </script>
