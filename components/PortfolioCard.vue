@@ -5,7 +5,7 @@
       class="card card_front"
       @click="zIndexVal--"
     >
-      <img :src="logo" />
+      <img :src="getImgUrl(logo)" />
     </div>
     <div class="card cardInfo card_back" @click="zIndexVal++">
       <h1 class="cardInfo cardTitle">{{ title }}</h1>
@@ -28,6 +28,10 @@ export default {
   methods: {
     SwitchCard: function() {
       alert('letsTalk')
+    },
+    getImgUrl: function(img) {
+      const images = require.context('../static/images', false, /\.png$/)
+      return images('./' + img + '.png')
     }
   }
 }
@@ -40,6 +44,10 @@ export default {
   flex-flow: row;
 }
 
+img {
+  width: 257px;
+  height: 256px;
+}
 .card {
   width: 257px;
   height: 256px;
