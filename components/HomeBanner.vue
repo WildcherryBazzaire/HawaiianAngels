@@ -1,11 +1,21 @@
 <template>
   <b-container fluid style="align-items: flex-start">
     <b-row class="banner-row">
-      <b-col class="polygon" sm="7">
-        <div class="polygon-content">
-          <h1>OOF</h1>
-          <p>Lorem Ipsum</p>
-        </div>
+      <b-col class="polygon" sm="8">
+        <b-container class="polygon-content">
+          <b-row>
+            <b-col sm="12">
+              <p style="font-size:24px;width: 80%; font-weight:lighter;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                iaculis dolor non lacus pulvinar interdum. In blandit, massa eu
+                tincidunt dapibus, lorem tortor mattis leo, sit amet vehicula
+              </p>
+            </b-col>
+            <b-col>
+              <b-button size="md">Pitch the Angels</b-button>
+            </b-col>
+          </b-row>
+        </b-container>
       </b-col>
       <b-col class="banner-image" sm="6"></b-col>
     </b-row>
@@ -18,12 +28,18 @@
   height: 337px;
 }
 .polygon {
+  background: #fcfcfc;
   clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
   z-index: 1;
 }
 .polygon-content {
   width: 80%;
   height: 100%;
+  min-height: 0;
+  align-items: start;
+  padding-top: 4rem;
+  justify-content: flex-start;
+  text-align: initial;
 }
 .banner-image {
   position: absolute;
