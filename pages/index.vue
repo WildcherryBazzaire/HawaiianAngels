@@ -84,10 +84,7 @@
               </b-col>
             </b-row>
           </b-col>
-          <b-col offset-md="1" pull-md="1" sm="12" md="3">
-            <b-img :src="require('@/static/chenoa.jpg')"></b-img>
-          </b-col>
-          <b-col sm="12" md="8">
+          <b-col offset-md="1" sm="12" md="8">
             <b-row>
               <b-col sm="12">
                 <h1>Chenoa Farnsworth</h1>
@@ -111,6 +108,9 @@
                 </p>
               </b-col>
             </b-row>
+          </b-col>
+          <b-col pull-md="1" sm="12" md="3">
+            <b-img :src="require('@/static/chenoa.jpg')"></b-img>
           </b-col>
         </b-row>
       </b-col>

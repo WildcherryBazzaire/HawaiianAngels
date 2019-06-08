@@ -51,6 +51,18 @@ export default {
   }
 }
 
+@keyframes expandContent {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /*add the keyframes */
 .card-root-container {
   height: 12rem;
@@ -75,11 +87,13 @@ export default {
   background-size: cover;
   border: 1px solid black;
   z-index: 1;
+  animation: expandContent 0.25s ease forwards;
 }
 
 .card-back {
   background: #4f4e4c;
   z-index: 0;
+  animation: minimizePicture 0.25s ease forwards;
 }
 
 /* .card-root-container:hover .card-back {
@@ -87,6 +101,10 @@ export default {
 } */
 
 .card-root-container:hover .card-front {
-  animation: minimizePicture 0.25s ease-in forwards;
+  animation: minimizePicture 0.25s ease forwards;
+}
+
+.card-root-container:hover .card-back {
+  animation: expandContent 0.25s ease forwards;
 }
 </style>
