@@ -1,5 +1,15 @@
 <template>
   <div>
+    <b-nav class="header-main">
+      <b-navbar-brand>
+        <b-img fluid :src="require('@/static/logo.svg')"></b-img>
+      </b-navbar-brand>
+      <b-nav-item class="header-items">Home</b-nav-item>
+      <b-nav-item class="header-items">Investors</b-nav-item>
+      <b-nav-item class="header-items">IEntreprenuers</b-nav-item>
+      <b-nav-item class="header-items">Sponsors</b-nav-item>
+      <b-nav-item class="header-items">Portfolio</b-nav-item>
+    </b-nav>
     <nuxt />
   </div>
 </template>
@@ -51,5 +61,26 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.header-items {
+  position: relative;
+  margin: auto;
+  font-size: 24px;
+}
+
+.header-main {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.header-main::after {
+  content: '';
+  bottom: 0%;
+  display: none;
+  margin: 0 auto;
+  width: 80%;
+  padding-top: 0.1rem;
+  border-bottom: 0.25px solid #6cd4ff;
 }
 </style>

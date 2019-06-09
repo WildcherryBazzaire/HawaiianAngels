@@ -1,51 +1,68 @@
 <template>
-  <div class="card">
-    <div class="top row"></div>
-    <div class="middle row"></div>
-    <div class="bottom row"></div>
-    <div
-      :style="{ zIndex: zIndexVal }"
-      class="card card_front"
-      @click="zIndexVal--"
-    >
-      <img :src="getImgUrl(logo)" />
-    </div>
-    <div class="card cardInfo card_back" @click="zIndexVal++">
-      <h1 class="cardInfo cardTitle">{{ title }}</h1>
-      <p>{{ description }}</p>
+  <div class="card-root-container">
+    <div class="card-inner-container">
+      <!-- All the lines Start here -->
+      <b-img
+        :src="require('@/static/Cards/aLineRed.svg')"
+        class="red-line"
+      ></b-img>
+      <b-img
+        :src="require('@/static/Cards/aLineOrange.svg')"
+        class="orange-line"
+      ></b-img>
+      <b-img
+        :src="require('@/static/Cards/aLineBlue.svg')"
+        class="blue-line"
+      ></b-img>
+      <!-- All the line Stuff Ends Here -->
+      <div
+        class="card-front"
+        :style="'background-image:url(' + content.image + ');'"
+      ></div>
+      <div class="card-back" style="text-align:center;">
+        <div class="back-card-content">
+          <b-row>
+            <b-col sm="12">
+              <p>Some Header</p>
+            </b-col>
+            <b-col sm="12">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit
+                amet elementum nisi.
+              </p>
+            </b-col>
+            <b-col sm="12">
+              <a href="#">Learn More</a>
+            </b-col>
+          </b-row>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Card',
   props: {
-    title: String,
-    description: String,
-    logo: String
-  },
-  data() {
-    return { zIndexVal: 3 }
-  },
-  methods: {
-    SwitchCard: function() {
-      alert('letsTalk')
-    },
-    getImgUrl: function(img) {
-      const images = require.context('../static/images', false, /\.png$/)
-      return images('./' + img + '.png')
-    }
+    content: Object
   }
 }
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
-
-#container {
-  display: flex;
-  flex-flow: row;
+@keyframes minimizePicture {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.75);
+    opacity: 0.5;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: scale(0.5);
+  }
 }
 .row {
   position: absolute;
@@ -59,7 +76,7 @@ export default {
   right: 0%;
   width: 86px;
   height: 10px;
-  background-color: #B70304;
+  background-color: #b70304;
   animation: goleft 0.5s linear forwards 1s;
 }
 
@@ -68,7 +85,7 @@ export default {
   left: 0%;
   width: 34px;
   height: 10px;
-  background-color: #DE8F11;
+  background-color: #de8f11;
   animation: goright 0.5s linear forwards 1s;
 }
 
@@ -78,46 +95,108 @@ export default {
   z-index: 5;
   width: 61px;
   height: 10px;
-  background-color: #56A3A6;
+  background-color: #56a3a6;
 }
 
-img {
-  width: 257px;
-  height: 256px;
-}
-.card {
-  width: 257px;
-  height: 256px;
-  background: #4f4e4c;
-  border-radius: 10px;
-  margin: 5%;
-}
-
-.cardInfo {
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #fcfcfc;
+@keyframes expandContent {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-.cardTitle {
-  font-weight: bold;
-  font-size: 28px;
+@keyframes lineShiftRight {
+  0% {
+  }
 }
-.card_front {
+
+/*add the keyframes */
+.card-root-container {
+  height: 12rem;
+  width: 12rem;
+  margin: auto;
+}
+.card-inner-container,
+.card-front,
+.card-back {
+  width: 12rem;
+  height: 12rem;
+}
+
+.card-inner-container {
+  position: relative;
+}
+
+.card-front,
+.card-back {
   position: absolute;
-  top: 0;
+  border-radius: 0.75rem;
+}
+
+.card-front {
+  background-position: center;
+  background-size: cover;
+  border: 1px solid black;
   z-index: 1;
+  animation: expandContent 0.25s ease forwards;
 }
-.card_back {
+
+.card-back {
+  background: #4f4e4c;
+  z-index: 0;
+  animation: minimizePicture 0.25s ease forwards;
+}
+
+.red-line,
+.orange-line,
+.blue-line {
   position: absolute;
-  top: 0;
   z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.red-line {
+  top: -2%;
+  left: -24%;
+}
+
+.orange-line {
+  top: 50%;
+  left: -10%;
+}
+
+.blue-line {
+  bottom: -2%;
+  right: -9%;
+}
+
+/* .card-root-container:hover .card-back {
+  animation: showContent 0.3s ease-in forwards;
+} */
+
+.card-root-container:hover .card-front {
+  animation: minimizePicture 0.25s ease forwards;
+}
+
+.card-root-container:hover .card-back {
+  animation: expandContent 0.25s ease forwards;
+}
+
+.card-root-container:hover .card-inner-container > .red-line {
+  left: 86%;
+}
+
+.card-root-container:hover .card-inner-container > .orange-line {
+  left: 90%;
+}
+
+.card-root-container:hover .card-inner-container > .blue-line {
+  right: 76%;
 }
 
 @keyframes goleft {
