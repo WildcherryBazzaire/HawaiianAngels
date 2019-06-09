@@ -1,5 +1,5 @@
 <template>
-  <div id="cont">
+  <div>
     <Card
       title="Neural Analytics"
       description="Neural Analytics (NA) is developing a product that will allow physicians, first responders and even laypeople to accurately and quickly determine the severity of brain trauma in the field. Our device will simplify brain injury diagnosis, reduce healthcare costs and improve patient outcomes."
@@ -286,10 +286,3 @@ export default {
   }
 }
 </script>
-
-<style>
-#cont {
-  display: flex;
-  flex-flow: row wrap;
-}
-</style>

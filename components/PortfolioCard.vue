@@ -23,13 +23,10 @@
         <div class="back-card-content">
           <b-row>
             <b-col sm="12">
-              <p>Some Header</p>
+              <p>{{ content.name }}</p>
             </b-col>
             <b-col sm="12">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit
-                amet elementum nisi.
-              </p>
+              <p>{{ content.text }}</p>
             </b-col>
             <b-col sm="12">
               <a href="#">Learn More</a>
@@ -63,12 +60,6 @@ export default {
     opacity: 0;
     transform: scale(0.5);
   }
-}
-.row {
-  position: absolute;
-  width: 50px;
-  height: 10px;
-  border-radius: 50px;
 }
 
 .top {

@@ -126,16 +126,22 @@ export default {
     return {
       portfolioDemo: [
         {
-          image:
-            'https://www.hawaiiangels.org/uploads/2/3/4/9/23499640/174235.png?319',
-          name: 'Lorem Ipsum',
-          text: 'Neado Libido'
+          image: require('@/static/images/Neural_Analytics.png'),
+          name: 'Neural Analytics',
+          text:
+            'Neural Analytics (NA) is developing a product that will allow physicians, first responders and even...'
+        },
+        {
+          image: require('@/static/images/Ibis_Networks.png'),
+          name: 'Ibis Network',
+          text:
+            'Ibis Networks creates a secure mesh network using 128-bit AES encryption and patented Intelisocket™ technology...'
         },
         {
           image:
             'https://www.hawaiiangels.org/uploads/2/3/4/9/23499640/174235.png?319',
           name: 'Lorem Ipsum',
-          text: 'Libido'
+          text: 'Neado'
         },
         {
           image:
