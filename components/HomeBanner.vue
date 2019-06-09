@@ -12,7 +12,9 @@
               </p>
             </b-col>
             <b-col>
-              <b-button size="md">Pitch the Angels</b-button>
+              <b-button class="btn-warning text-white" size="md"
+                >Pitch the Angels</b-button
+              >
             </b-col>
           </b-row>
         </b-container>
@@ -31,6 +33,7 @@
   background: #fcfcfc;
   clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
   z-index: 1;
+  background: #b70304;
 }
 .polygon-content {
   width: 80%;
@@ -40,6 +43,7 @@
   padding-top: 4rem;
   justify-content: flex-start;
   text-align: initial;
+  color: #fcfcfc;
 }
 .banner-image {
   position: absolute;
