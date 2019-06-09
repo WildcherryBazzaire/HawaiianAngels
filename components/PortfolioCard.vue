@@ -110,7 +110,7 @@ export default {
 .card-root-container {
   height: 12rem;
   width: 12rem;
-  margin: auto;
+  margin: 2%;
 }
 .card-inner-container,
 .card-front,

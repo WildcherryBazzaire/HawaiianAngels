@@ -127,6 +127,10 @@ export default {
   },
   data() {
     return {
+      /*
+      should we add a search feature?
+      all the information is in Portfolio.vue
+      */
       portfolioDemo: [
         {
           image: require('@/static/images/Neural_Analytics.png'),
@@ -173,6 +177,30 @@ export default {
           name: 'Tealet',
           text:
             'Tealet is a direct-from-grower e-commerce marketplace that allows...'
+        },
+        {
+          image: require('@/static/images/Contix.png'),
+          name: 'Contix',
+          text:
+            'Contixs mission is to provide value to traders and invenstors...'
+        },
+        {
+          image: require('@/static/images/Mile_High_Organics.png'),
+          name: 'Mile High Organic',
+          text:
+            'Mile High Organics is Americas first certified organic online grocery store..'
+        },
+        {
+          image: require('@/static/images/Volta.png'),
+          name: 'Volta',
+          text:
+            'Volta Industries builds public, free-to-use electric vehicle charging networks...'
+        },
+        {
+          image: require('@/static/images/Tetris_Online.png'),
+          name: 'Tetris Online',
+          text:
+            'Tetris Online, Inc. is the exclusive online license of The Tetris Company...'
         }
       ]
     }
