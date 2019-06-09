@@ -6,9 +6,7 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col sm="12" class="header-aligns">
-        <h1 class="start-headers">The Header</h1>
-      </b-col>
+      <Category-Header :content="'The Header'" />
       <b-col sm="12" offset-md="1" md="4">
         <b-img
           src="https://www.hawaiiangels.org/uploads/2/3/4/9/23499640/9824627.jpg?425"
@@ -39,9 +37,7 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col sm="12">
-        <h1 class="start-headers text-sm-center">Portfolio</h1>
-      </b-col>
+      <Category-Header :content="'Portfolio'" />
       <b-col sm="12">
         <b-row>
           <template v-for="items in portfolioDemo">
@@ -53,9 +49,7 @@
       </b-col>
       <b-col>
         <b-row>
-          <b-col sm="12">
-            <h1 class="start-headers">Management Team</h1>
-          </b-col>
+          <Category-Header :content="'Management Team'" />
           <b-col offset-md="1" sm="12" md="3">
             <b-img :src="require('@/static/chenoa.jpg')"></b-img>
           </b-col>
@@ -121,10 +115,12 @@
 <script>
 import HomeBanner from '@/components/HomeBanner.vue'
 import PortfolioCard from '@/components/PortfolioCard.vue'
+import CategoryHeader from '@/components/CategoryHeader.vue'
 export default {
   components: {
     'Home-Banner': HomeBanner,
-    'Portfolio-Card': PortfolioCard
+    'Portfolio-Card': PortfolioCard,
+    'Category-Header': CategoryHeader
   },
   data() {
     return {

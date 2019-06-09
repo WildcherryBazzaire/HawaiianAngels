@@ -1,6 +1,20 @@
 <template>
   <div class="card-root-container">
     <div class="card-inner-container">
+      <!-- All the lines Start here -->
+      <b-img
+        :src="require('@/static/Cards/aLineRed.svg')"
+        class="red-line"
+      ></b-img>
+      <b-img
+        :src="require('@/static/Cards/aLineOrange.svg')"
+        class="orange-line"
+      ></b-img>
+      <b-img
+        :src="require('@/static/Cards/aLineBlue.svg')"
+        class="blue-line"
+      ></b-img>
+      <!-- All the line Stuff Ends Here -->
       <div
         class="card-front"
         :style="'background-image:url(' + content.image + ');'"
@@ -63,6 +77,11 @@ export default {
   }
 }
 
+@keyframes lineShiftRight {
+  0% {
+  }
+}
+
 /*add the keyframes */
 .card-root-container {
   height: 12rem;
@@ -74,6 +93,10 @@ export default {
 .card-back {
   width: 12rem;
   height: 12rem;
+}
+
+.card-inner-container {
+  position: relative;
 }
 
 .card-front,
@@ -96,6 +119,29 @@ export default {
   animation: minimizePicture 0.25s ease forwards;
 }
 
+.red-line,
+.orange-line,
+.blue-line {
+  position: absolute;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.red-line {
+  top: -2%;
+  left: -24%;
+}
+
+.orange-line {
+  top: 50%;
+  left: -10%;
+}
+
+.blue-line {
+  bottom: -2%;
+  right: -9%;
+}
+
 /* .card-root-container:hover .card-back {
   animation: showContent 0.3s ease-in forwards;
 } */
@@ -106,5 +152,17 @@ export default {
 
 .card-root-container:hover .card-back {
   animation: expandContent 0.25s ease forwards;
+}
+
+.card-root-container:hover .card-inner-container > .red-line {
+  left: 86%;
+}
+
+.card-root-container:hover .card-inner-container > .orange-line {
+  left: 90%;
+}
+
+.card-root-container:hover .card-inner-container > .blue-line {
+  right: 76%;
 }
 </style>

@@ -35,6 +35,18 @@ export default {
           text: `
 First Hawaiian BankFirst Hawaiian Bank is Hawaii's oldest and largest financial institution with $14.3 billion in total assets and over $10 billion in deposits. It was founded in 1858 by Charles Reed Bishop and today retains his values and integrity. The bank offers a full range of personal and business financial products, including a full complement of wealth management services such as estate planning, insurance and investments all delivered by a fully qualified trusted advisor. The bank is owned by BNP Paribas, a leading global financial services institution.`,
           link: 'http://www.fhb.com/'
+        },
+        {
+          image: require('@/static/sponsors/First_Hawaii_Bank.png'),
+          text: `
+First Hawaiian Bankirst Hawaiian Bank is Hawaii's oldest and largest financial institution with $14.3 billion in total assets and over $10 billion in deposits. It was founded in 1858 by Charles Reed Bishop and today retains his values and integrity. The bank offers a full range of personal and business financial products, including a full complement of wealth management services such as estate planning, insurance and investments all delivered by a fully qualified trusted advisor. The bank is owned by BNP Paribas, a leading global financial services institution.`,
+          link: 'http://www.fhb.com/'
+        },
+        {
+          image: require('@/static/sponsors/First_Hawaii_Bank.png'),
+          text: `
+First Hawaiian BankFrst Hawaiian Bank is Hawaii's oldest and largest financial institution with $14.3 billion in total assets and over $10 billion in deposits. It was founded in 1858 by Charles Reed Bishop and today retains his values and integrity. The bank offers a full range of personal and business financial products, including a full complement of wealth management services such as estate planning, insurance and investments all delivered by a fully qualified trusted advisor. The bank is owned by BNP Paribas, a leading global financial services institution.`,
+          link: 'http://www.fhb.com/'
         }
       ]
     }

@@ -5,15 +5,10 @@
     </b-row>
     <b-row>
       <!--Become a member stuff -->
-      <b-col sm="12" class="page-headers">
-        <!--This column is the header for the stuff -->
-        <span class="lines"></span>
-        <span class="text-sm-center">
-          <h1>Become A Member</h1>
-          <p>Pay with Paypal or Credit Card</p>
-        </span>
-        <span class="lines"></span>
-      </b-col>
+      <Category-Header
+        :content="'Become A Member'"
+        :additional-content="'Pay with Paypal or Credit Card'"
+      />
       <b-col sm="12" class="page-sub-headers text-sm-center">
         <!--This the plan subheader -->
         <h2>1. Pick A Plan</h2>
@@ -28,17 +23,11 @@
   </b-container>
 </template>
 
-<style>
-.lines {
-  margin: auto 1rem;
-  width: 53px;
-  padding-top: 5px;
-  border-bottom: 0.25px solid #6cd4ff;
+<script>
+import CategoryHeader from '@/components/CategoryHeader'
+export default {
+  components: {
+    'Category-Header': CategoryHeader
+  }
 }
-.page-headers {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-</style>
+</script>
