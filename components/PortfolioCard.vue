@@ -1,5 +1,8 @@
 <template>
   <div class="card">
+    <div class="top row"></div>
+    <div class="middle row"></div>
+    <div class="bottom row"></div>
     <div
       :style="{ zIndex: zIndexVal }"
       class="card card_front"
@@ -39,9 +42,37 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
 #container {
   display: flex;
   flex-flow: row;
+}
+.row {
+  position: absolute;
+  width: 50px;
+  height: 10px;
+  border-radius: 15%;
+}
+
+.top {
+  top: 0%;
+  right: 0%;
+  background-color: blue;
+  animation: goleft 0.5s linear forwards 1s;
+}
+
+.middle {
+  top: 50%;
+  left: 0%;
+  background-color: red;
+  animation: goright 0.5s linear forwards 1s;
+}
+
+.bottom {
+  bottom: 0%;
+  right: -5%;
+  z-index: 5;
+  background-color: yellowgreen;
 }
 
 img {
@@ -53,6 +84,7 @@ img {
   height: 256px;
   background: #4f4e4c;
   border-radius: 10px;
+  margin: 5%;
 }
 
 .cardInfo {
@@ -80,5 +112,23 @@ img {
   position: absolute;
   top: 0;
   z-index: 2;
+}
+
+@keyframes goleft {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes goright {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 </style>
