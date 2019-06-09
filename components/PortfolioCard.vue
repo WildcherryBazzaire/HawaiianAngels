@@ -51,20 +51,24 @@ export default {
   position: absolute;
   width: 50px;
   height: 10px;
-  border-radius: 15%;
+  border-radius: 50px;
 }
 
 .top {
   top: 0%;
   right: 0%;
-  background-color: blue;
+  width: 86px;
+  height: 10px;
+  background-color: #B70304;
   animation: goleft 0.5s linear forwards 1s;
 }
 
 .middle {
   top: 50%;
   left: 0%;
-  background-color: red;
+  width: 34px;
+  height: 10px;
+  background-color: #DE8F11;
   animation: goright 0.5s linear forwards 1s;
 }
 
@@ -72,7 +76,9 @@ export default {
   bottom: 0%;
   right: -5%;
   z-index: 5;
-  background-color: yellowgreen;
+  width: 61px;
+  height: 10px;
+  background-color: #56A3A6;
 }
 
 img {
