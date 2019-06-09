@@ -25,7 +25,6 @@
   width: 100vw;
 }
 .h-text {
-  color: white;
   font-size: 48px;
 }
 </style>
