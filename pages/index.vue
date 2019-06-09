@@ -41,10 +41,13 @@
       <b-col sm="12">
         <b-row>
           <template v-for="items in portfolioDemo">
-            <b-col :key="items.text" sm="2">
+            <b-col :key="items.text" sm="3">
               <Portfolio-Card :content="items" />
             </b-col>
           </template>
+          <b-col sm="12">
+            <h1 id="view_more" offset-md="6">View More</h1>
+          </b-col>
         </b-row>
       </b-col>
       <b-col>
@@ -138,16 +141,38 @@ export default {
             'Ibis Networks creates a secure mesh network using 128-bit AES encryption and patented Intelisocket™ technology...'
         },
         {
-          image:
-            'https://www.hawaiiangels.org/uploads/2/3/4/9/23499640/174235.png?319',
-          name: 'Lorem Ipsum',
-          text: 'Neado'
+          image: require('@/static/images/Kiana_Analytics.png'),
+          name: 'Kiana Analytics',
+          text: 'iana Analytics is a secure cloud-based big data analytics...'
         },
         {
-          image:
-            'https://www.hawaiiangels.org/uploads/2/3/4/9/23499640/174235.png?319',
-          name: 'Lorem Ipsum',
-          text: 'Neado'
+          image: require('@/static/images/Happy_Hour_Pal.png'),
+          name: 'Happy Hour Pal',
+          text:
+            'Happy Hour Pal makes happy hour informaiton easily accessible... '
+        },
+        {
+          image: require('@/static/images/Selly_Automotive.png'),
+          name: 'Selly Automotive',
+          text:
+            'Selly Automotive is a mobile first sales platform for dealerships and sales people. '
+        },
+        {
+          image: require('@/static/images/Maclear.png'),
+          name: 'Maclear',
+          text: 'Maclear’s enterprise, governance, risk and compliance (eGRC)'
+        },
+        {
+          image: require('@/static/images/Findable_EXIT.png'),
+          name: 'Findable',
+          text:
+            'Headquartered in Silicon Valley, California, Findables uses creative tech'
+        },
+        {
+          image: require('@/static/images/Tealet.png'),
+          name: 'Tealet',
+          text:
+            'Tealet is a direct-from-grower e-commerce marketplace that allows...'
         }
       ]
     }
@@ -228,5 +253,15 @@ export default {
 
 #AlineCurve {
   right: 0%;
+}
+#view_more {
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 2%;
 }
 </style>
