@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid>
+  <b-container fluid class="text-sm-center">
     <b-row>
       <b-col md="12">
         <Home-Banner />
@@ -40,7 +40,7 @@
     </b-row>
     <b-row>
       <b-col sm="12">
-        <h1 class="start-headers" style="text-align:center">Portfolio</h1>
+        <h1 class="start-headers text-sm-center">Portfolio</h1>
       </b-col>
       <b-col sm="12">
         <b-row>
