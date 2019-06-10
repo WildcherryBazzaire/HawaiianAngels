@@ -100,7 +100,8 @@ export default {
   width: 100px;
 }
 .divider {
-  border-left: thick solid #b70304;
+  border-left: 10px solid #b70304;
+  border-radius: 10px;
 }
 h1 {
   color: #b70304;
