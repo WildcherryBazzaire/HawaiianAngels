@@ -6,7 +6,7 @@
       </b-col>
     </b-row>
     <b-row>
-      <Category-Header :content="'The Header'" />
+      <Category-Header :content="'Who We Are'" />
       <b-col sm="12" offset-md="1" md="4">
         <b-img
           src="https://www.hawaiiangels.org/uploads/2/3/4/9/23499640/9824627.jpg?425"
@@ -38,7 +38,10 @@
       </b-col>
     </b-row>
     <b-row>
-      <Category-Header :content="'Portfolio'" />
+      <Category-Header
+        :content="'Portfolio'"
+        :additional-content="'nearly 60 investments over 14 years'"
+      />
       <b-col sm="12">
         <b-row>
           <template v-for="items in portfolioDemo">
@@ -209,7 +212,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   margin: 0 auto;
   min-height: 100vh;
