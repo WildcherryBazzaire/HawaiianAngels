@@ -2,7 +2,11 @@
   <b-container class="main">
     <b-row>
       <b-col>
-        <h1>---Membership Levels---</h1>
+        <h1>
+          <hr class="dash" />
+          Membership Levels
+          <hr class="dash" />
+        </h1>
       </b-col>
       <template v-for="x in content">
         <Levels
@@ -13,15 +17,27 @@
           :image="x.image"
         ></Levels>
       </template>
+      <b-col>
+        <h1>
+          <hr class="dash" />
+          Become A Member
+          <hr class="dash" />
+        </h1>
+        <h2>1. Pick A Plan</h2>
+        <p>Pay with Paypal or Credit Card</p>
+        <Plan></Plan>
+      </b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
 import levels from '@/components/investors/levels.vue'
+import plan from '@/components/investors/plan.vue'
 export default {
   components: {
-    Levels: levels
+    Levels: levels,
+    Plan: plan
   },
   data() {
     return {
@@ -69,6 +85,26 @@ export default {
 </script>
 
 <style>
+.box {
+  border: 1px solid;
+  border-radius: 30px;
+  box-shadow: 3px 3px black;
+  height: 200px;
+  left: 25%;
+  position: relative;
+  width: 300px;
+}
+.dash {
+  border-color: #56a3a6;
+  display: inline-block;
+  width: 100px;
+}
+.divider {
+  border-left: thick solid #b70304;
+}
+h1 {
+  color: #b70304;
+}
 #main {
   max-width: 100%;
 }

@@ -4,12 +4,12 @@
       <b-col>
         <b-row class="row-fix">
           <b-col md="12" offset-md="4"
-            ><h1 class="h-text">{{ header }}</h1></b-col
+            ><h2 class="h-text">{{ header }}</h2></b-col
           >
         </b-row>
         <b-row class="row-fix">
           <b-col md="12" offset-md="5">
-            <h1 class="line">________</h1>
+            <h2 class="line">________</h2>
           </b-col>
         </b-row>
         <b-row class="row-fix">
