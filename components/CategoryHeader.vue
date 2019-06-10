@@ -3,8 +3,8 @@
     <!--This column is the header for the stuff -->
     <span class="lines"></span>
     <span class="text-sm-center">
-      <h1>{{ content }}</h1>
-      <p v-if="additionalContent">
+      <h1 style="font-size:48px;color:#b70304;">{{ content }}</h1>
+      <p class="ma-0" v-if="additionalContent">
         {{ additionalContent }}
       </p>
     </span>

@@ -13,6 +13,7 @@
           :src="require('@/static/AlineCurve.svg')"
           class="line-curve-right"
         ></b-img>
+        <h1 class="pb-3 text-right">{{ content.title }}</h1>
         <p class="text-left">
           {{ content.text }}
         </p>
@@ -28,6 +29,7 @@
           :src="require('@/static/AlineCurve.svg')"
           class="line-curve-left"
         ></b-img>
+        <h1 class="pb-3">{{ content.title }}</h1>
         <p class="text-left">
           {{ content.text }}
         </p>
@@ -72,12 +74,12 @@ export default {
 
 .line-curve-right {
   right: -3%;
-  top: -20%;
+  top: -10%;
 }
 
 .line-curve-left {
   transform: rotateZ(-90deg);
   left: -3%;
-  top: -12%;
+  top: -6%;
 }
 </style>
