@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid class="text-sm-center">
+  <b-container fluid class="text-sm-center px-0">
     <b-row>
       <b-col md="12">
         <Home-Banner />
@@ -10,6 +10,7 @@
       <b-col sm="12" offset-md="1" md="4">
         <b-img
           src="https://www.hawaiiangels.org/uploads/2/3/4/9/23499640/9824627.jpg?425"
+          fluid
         ></b-img>
       </b-col>
       <b-col sm="12" md="6" class="asymmetry-text">
@@ -54,7 +55,7 @@
         <b-row>
           <Category-Header :content="'Management Team'" />
           <b-col offset-md="1" sm="12" md="3">
-            <b-img :src="require('@/static/chenoa.jpg')"></b-img>
+            <b-img :src="require('@/static/chenoa.jpg')" fluid></b-img>
           </b-col>
           <b-col sm="12" md="8">
             <b-row>
@@ -107,7 +108,7 @@
             </b-row>
           </b-col>
           <b-col pull-md="1" sm="12" md="3">
-            <b-img :src="require('@/static/chenoa.jpg')"></b-img>
+            <b-img :src="require('@/static/chenoa.jpg')" fluid></b-img>
           </b-col>
         </b-row>
       </b-col>
