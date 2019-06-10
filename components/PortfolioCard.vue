@@ -23,13 +23,10 @@
         <div class="back-card-content">
           <b-row>
             <b-col sm="12">
-              <p>Some Header</p>
+              <p>{{ content.name }}</p>
             </b-col>
             <b-col sm="12">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit
-                amet elementum nisi.
-              </p>
+              <p>{{ content.text }}</p>
             </b-col>
             <b-col sm="12">
               <a href="#">Learn More</a>
@@ -65,6 +62,33 @@ export default {
   }
 }
 
+.top {
+  top: 0%;
+  right: 0%;
+  width: 86px;
+  height: 10px;
+  background-color: #b70304;
+  animation: goleft 0.5s linear forwards 1s;
+}
+
+.middle {
+  top: 50%;
+  left: 0%;
+  width: 34px;
+  height: 10px;
+  background-color: #de8f11;
+  animation: goright 0.5s linear forwards 1s;
+}
+
+.bottom {
+  bottom: 0%;
+  right: -5%;
+  z-index: 5;
+  width: 61px;
+  height: 10px;
+  background-color: #56a3a6;
+}
+
 @keyframes expandContent {
   0% {
     transform: scale(0.5);
@@ -86,7 +110,7 @@ export default {
 .card-root-container {
   height: 12rem;
   width: 12rem;
-  margin: auto;
+  margin: 2%;
 }
 .card-inner-container,
 .card-front,
@@ -164,5 +188,23 @@ export default {
 
 .card-root-container:hover .card-inner-container > .blue-line {
   right: 76%;
+}
+
+@keyframes goleft {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes goright {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 </style>
