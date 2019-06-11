@@ -1,20 +1,6 @@
 <template>
   <div class="card-root-container">
     <div class="card-inner-container">
-      <!-- All the lines Start here -->
-      <b-img
-        :src="require('@/static/Cards/aLineRed.svg')"
-        class="red-line"
-      ></b-img>
-      <b-img
-        :src="require('@/static/Cards/aLineOrange.svg')"
-        class="orange-line"
-      ></b-img>
-      <b-img
-        :src="require('@/static/Cards/aLineBlue.svg')"
-        class="blue-line"
-      ></b-img>
-      <!-- All the line Stuff Ends Here -->
       <div
         class="card-front"
         :style="'background-image:url(' + content.image + ');'"
@@ -117,10 +103,52 @@ export default {
 .card-back {
   width: 12rem;
   height: 12rem;
+  overflow: hidden;
+}
+
+.card-inner-container::before {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  left: -4px;
+  transform: rotate(45deg);
+  content: '';
+  border: inherit;
+  transform: rotate(45deg);
+  border-radius: 5rem;
+  z-index: 2;
 }
 
 .card-inner-container {
   position: relative;
+  -webkit-clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  border: 5px solid #56a3a6;
+  border-radius: 5rem;
 }
 
 .card-front,
@@ -132,7 +160,6 @@ export default {
 .card-front {
   background-position: center;
   background-size: cover;
-  border: 1px solid black;
   z-index: 1;
   animation: expandContent 0.25s ease forwards;
 }
@@ -204,7 +231,7 @@ export default {
     left: 0%;
   }
   100% {
-    left: 100%;
+    left: 100;
   }
 }
 </style>
