@@ -19,7 +19,7 @@
           id="AlineCurve"
           :src="require('@/static/AlineCurve.svg')"
         ></b-img>
-        <p>
+        <p class="text-left" data-aos="fade-up">
           Hawaii Angels provides a forum for members to review investment
           presentations and share opinions about these opportunities. This forum
           also allows for networking with professionals of various backgrounds,
@@ -66,7 +66,7 @@
                 <h1>Chenoa Farnsworth</h1>
               </b-col>
               <b-col sm="10">
-                <p>
+                <p class="text-left">
                   Chenoa Farnsworth was one of the founding members of Hawaii
                   Angels in 2002. Chenoa has more than 15 years experience in
                   business strategy and private equity investing. Farnsworth is
@@ -91,7 +91,7 @@
                 <h1>Chenoa Farnsworth</h1>
               </b-col>
               <b-col sm="10">
-                <p>
+                <p class="text-left">
                   Chenoa Farnsworth was one of the founding members of Hawaii
                   Angels in 2002. Chenoa has more than 15 years experience in
                   business strategy and private equity investing. Farnsworth is

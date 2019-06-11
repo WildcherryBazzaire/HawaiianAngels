@@ -14,7 +14,7 @@
           class="line-curve-right"
         ></b-img>
         <h1 class="pb-3 text-right">{{ content.title }}</h1>
-        <p class="text-left">
+        <p class="text-left" data-aos="fade-right">
           {{ content.text }}
         </p>
       </b-col>
@@ -30,7 +30,7 @@
           class="line-curve-left"
         ></b-img>
         <h1 class="pb-3">{{ content.title }}</h1>
-        <p class="text-left">
+        <p class="text-left" data-aos="fade-left">
           {{ content.text }}
         </p>
       </b-col>
