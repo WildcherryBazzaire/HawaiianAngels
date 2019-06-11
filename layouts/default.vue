@@ -1,19 +1,44 @@
 <template>
-  <div id="main">
-    <Application-Page></Application-Page>
-    <Investors-Page></Investors-Page>
-    <!--<nuxt />-->
+  <div>
+    <b-navbar ref="headerMain" class="header-main px-4 pb-4 py-2">
+      <b-navbar-brand>
+        <b-img fluid :src="require('@/static/logo.svg')"></b-img>
+      </b-navbar-brand>
+      <b-navbar-nav ref="headerContent" class="float-right">
+        <b-nav-item class="header-items px-5" to="/">Home</b-nav-item>
+        <b-nav-item class="header-items px-5" to="/investor"
+          >Investors</b-nav-item
+        >
+        <b-nav-item class="header-items px-5" to="/entrepreneurs"
+          >IEntreprenuers</b-nav-item
+        >
+        <b-nav-item class="header-items px-5" to="/sponsors"
+          >Sponsors</b-nav-item
+        >
+        <b-nav-item class="header-items px-5" to="/portfolio"
+          >Portfolio</b-nav-item
+        >
+      </b-navbar-nav>
+    </b-navbar>
+    <nuxt />
   </div>
 </template>
 
 <script>
-import investors from '@/pages/investors.vue'
-import application from '@/pages/application.vue'
 export default {
-  components: {
-    'Investors-Page': investors,
-    'Application-Page': application
-  }
+  // mounted() {
+  //   window.addEventListener('scroll', e => {
+  //     const scrollPos = window.scrollY
+  //     const winHeight = window.innerHeight
+  //     const docHeight = document.documentElement.scrollHeight
+  //     const perc = (100 * scrollPos) / (docHeight - winHeight)
+  //     if (perc >= 26) {
+  //       this.$refs.headerMain.className =
+  //         'header-main-scroll navbar px-4 py-1 navbar-light navbar-expand'
+  //       this.$refs.headerContent.className = 'navbar-nav float-right my-auto'
+  //     }
+  //   })
+  // }
 }
 </script>
 
@@ -66,7 +91,57 @@ html {
   background-color: #35495e;
 }
 
-#main {
-  overflow-x: hidden;
+.header-items {
+  position: relative;
+  font-size: 18px;
+}
+
+.header-items > a {
+  color: #4f4e4c;
+}
+
+.header-main {
+  position: relative;
+}
+
+.header-main::after {
+  content: '';
+  bottom: 5%;
+  position: absolute;
+  width: 100%;
+  padding-top: 0.1rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background: -webkit-gradient(
+    radial,
+    50% 50%,
+    0,
+    50% 50%,
+    350,
+    from(#db4c40),
+    to(#fcfcfc)
+  );
+}
+
+.header-main-scroll {
+  background: #b70304;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+}
+
+.header-main-scroll > ul > li > a {
+  color: #fcfcfc;
+}
+
+.header-main-scroll::after {
+  display: none;
+}
+
+#oof {
+  position: fixed;
+  top: 0%;
+  color: blue;
 }
 </style>

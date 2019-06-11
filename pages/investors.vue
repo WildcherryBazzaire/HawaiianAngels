@@ -31,7 +31,7 @@
         ></Plan>
         <div v-if="active === true">
           <h2 class="h-plan-options">2. Choose A Membership</h2>
-          <Plan2 :setActiveOneTime="activeOneTime"></Plan2>
+          <Plan2 :set-active-one-time="activeOneTime"></Plan2>
         </div>
       </b-col>
     </b-row>
