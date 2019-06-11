@@ -3,7 +3,7 @@
     <b-row>
       <b-col sm="12">
         <jumbotron></jumbotron>
-        <h1>
+        <h1 class="h-main">
           <hr class="dash" />
           Application
           <hr class="dash" />
@@ -14,6 +14,9 @@
         </p>
         <b-button size="lg">Apply Here</b-button>
       </b-col>
+      <b-col>
+        <img :src="image" />
+      </b-col>
     </b-row>
   </b-container>
 </template>
@@ -23,6 +26,11 @@ import jumbotron from '@/components/application/jumbotron.vue'
 export default {
   components: {
     jumbotron: jumbotron
+  },
+  data() {
+    return {
+      image: require('@/assets/application/application.svg')
+    }
   }
 }
 </script>

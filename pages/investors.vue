@@ -2,7 +2,7 @@
   <b-container class="main">
     <b-row>
       <b-col>
-        <h1>
+        <h1 class="h-main">
           <hr class="dash" />
           Membership Levels
           <hr class="dash" />
@@ -18,14 +18,21 @@
         ></Levels>
       </template>
       <b-col>
-        <h1>
+        <h1 class="h-main">
           <hr class="dash" />
           Become A Member
           <hr class="dash" />
         </h1>
-        <h2>1. Pick A Plan</h2>
+        <h2 class="h-plan-options">1. Pick A Plan</h2>
         <p>Pay with Paypal or Credit Card</p>
-        <Plan></Plan>
+        <Plan
+          @changeDisplay="setActive($event)"
+          @asetActive="bsetActive($event)"
+        ></Plan>
+        <div v-if="active === true">
+          <h2 class="h-plan-options">2. Choose A Membership</h2>
+          <Plan2 :setActiveOneTime="activeOneTime"></Plan2>
+        </div>
       </b-col>
     </b-row>
   </b-container>
@@ -34,13 +41,17 @@
 <script>
 import levels from '@/components/investors/levels.vue'
 import plan from '@/components/investors/plan.vue'
+import plan2 from '@/components/investors/plan2.vue'
 export default {
   components: {
     Levels: levels,
-    Plan: plan
+    Plan: plan,
+    Plan2: plan2
   },
   data() {
     return {
+      activeOneTime: false,
+      active: false,
       content: [
         {
           header: 'Indivduals',
@@ -80,6 +91,14 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    setActive: function(parm) {
+      this.active = parm
+    },
+    bsetActive: function(parm) {
+      this.activeOneTime = parm
+    }
   }
 }
 </script>
@@ -103,8 +122,14 @@ export default {
   border-left: 10px solid #b70304;
   border-radius: 10px;
 }
+.hidden {
+  display: none;
+}
 h1 {
   color: #b70304;
+}
+.h-main {
+  margin-top: 100px;
 }
 #main {
   max-width: 100%;

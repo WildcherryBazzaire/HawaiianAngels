@@ -1,33 +1,43 @@
 <template>
   <b-row align-h="end">
     <b-col>
-      <h2>{{ content[0].planName }}</h2>
       <img :src="content[0].image" />
-      <div class="box">
+      <h2 class="h-plan-name">{{ content[0].planName }}</h2>
+      <b-card class="box">
         <p>- Refresh your yearly plan</p>
         <p>- Save $50 off</p>
-        <div id="main-choose-this-plan">
-          <div class="b-choose-this-plan">Choose this Plan</div>
-        </div>
-      </div>
+
+        <b-button class="b-choose-this-plan" @click="openReoccuring()"
+          >Choose this Plan</b-button
+        >
+      </b-card>
     </b-col>
     <div class="divider"></div>
     <b-col>
-      <h2>{{ content[1].planName }}</h2>
       <img :src="content[1].image" />
-      <div class="box">
+      <h2 class="h-plan-name">{{ content[1].planName }}</h2>
+      <b-card class="box">
         <p>- Refresh your yearly plan</p>
         <p>- Save $50 off</p>
-        <div class="b-choose-this-plan">Choose this Plan</div>
-      </div>
+        <b-button
+          class="b-choose-this-plan"
+          @click="
+            openOneTime()
+            openReoccuring()
+          "
+          >Choose this Plan</b-button
+        >
+      </b-card>
     </b-col>
   </b-row>
 </template>
 
 <script>
+// import bus from '@/components/investors/bus'
 export default {
   data() {
     return {
+      oneTime: false,
       content: [
         {
           planName: 'Reoccuring',
@@ -38,6 +48,14 @@ export default {
           image: require('@/assets/investors/one_time.svg')
         }
       ]
+    }
+  },
+  methods: {
+    openReoccuring: function() {
+      this.$emit('changeDisplay', true)
+    },
+    openOneTime: function() {
+      this.$emit('asetActive', true)
     }
   }
 }
@@ -50,8 +68,15 @@ export default {
   height: 40px;
   width: 150px;
 }
+.h-plan-name {
+  color: #de8f11;
+}
+.h-plan-options {
+  color: #56a3a6;
+  margin-top: 100px;
+}
 #main-choose-this-plan {
-  align-content: center;
+  align-items: center;
   display: flex;
 }
 </style>
