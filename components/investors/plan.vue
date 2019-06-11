@@ -1,33 +1,45 @@
 <template>
-  <b-row align-h="end">
+  <b-row align-h="center">
     <b-col>
-      <img :src="content[0].image" />
-      <h2 class="h-plan-name">{{ content[0].planName }}</h2>
-      <b-card class="box">
-        <p>- Refresh your yearly plan</p>
-        <p>- Save $50 off</p>
+      <b-row align-h="center">
+        <img :src="content[0].image" />
+      </b-row>
+      <b-row align-h="center">
+        <h2 class="h-plan-name">{{ content[0].planName }}</h2>
+      </b-row>
+      <b-row align-h="center">
+        <b-card class="box">
+          <p>- Refresh your yearly plan</p>
+          <p>- Save $50 off</p>
 
-        <b-button class="b-choose-this-plan" @click="openReoccuring()"
-          >Choose this Plan</b-button
-        >
-      </b-card>
+          <b-button class="b-choose-this-plan" @click="openReoccuring()"
+            >Choose this Plan</b-button
+          >
+        </b-card>
+      </b-row>
     </b-col>
     <div class="divider"></div>
     <b-col>
-      <img :src="content[1].image" />
-      <h2 class="h-plan-name">{{ content[1].planName }}</h2>
-      <b-card class="box">
-        <p>- Refresh your yearly plan</p>
-        <p>- Save $50 off</p>
-        <b-button
-          class="b-choose-this-plan"
-          @click="
-            openOneTime()
-            openReoccuring()
-          "
-          >Choose this Plan</b-button
-        >
-      </b-card>
+      <b-row align-h="center">
+        <img :src="content[1].image" />
+      </b-row>
+      <b-row align-h="center">
+        <h2 class="h-plan-name">{{ content[1].planName }}</h2>
+      </b-row>
+      <b-row align-h="center">
+        <b-card class="box">
+          <p>- Refresh your yearly plan</p>
+          <p>- Save $50 off</p>
+          <b-button
+            class="b-choose-this-plan"
+            @click="
+              openOneTime()
+              openReoccuring()
+            "
+            >Choose this Plan</b-button
+          >
+        </b-card>
+      </b-row>
     </b-col>
   </b-row>
 </template>
@@ -73,7 +85,6 @@ export default {
 }
 .h-plan-options {
   color: #56a3a6;
-  margin-top: 100px;
 }
 #main-choose-this-plan {
   align-items: center;

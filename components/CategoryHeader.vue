@@ -3,13 +3,9 @@
     <!--This column is the header for the stuff -->
     <span class="lines"></span>
     <span class="text-sm-center">
-<<<<<<< HEAD
-      <h1 style="font-size:48px;color:#b70304;">{{ content }}</h1>
-=======
       <h1 style="font-size:48px;color:#b70304;" data-aos="fade">
         {{ content }}
       </h1>
->>>>>>> 766b3eb47ddb272abb3f9734aba9b0bf000a6a91
       <p v-if="additionalContent" class="ma-0">
         {{ additionalContent }}
       </p>

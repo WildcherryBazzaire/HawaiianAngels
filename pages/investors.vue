@@ -2,11 +2,7 @@
   <b-container class="main">
     <b-row>
       <b-col>
-        <h1 class="h-main">
-          <hr class="dash" />
-          Membership Levels
-          <hr class="dash" />
-        </h1>
+        <Category-Header :content="'Membership Levels'" />
       </b-col>
       <template v-for="x in content">
         <Levels
@@ -18,21 +14,23 @@
         ></Levels>
       </template>
       <b-col>
-        <h1 class="h-main">
-          <hr class="dash" />
-          Become A Member
-          <hr class="dash" />
-        </h1>
-        <h2 class="h-plan-options">1. Pick A Plan</h2>
-        <p>Pay with Paypal or Credit Card</p>
+        <Category-Header :content="'Become a Member'" />
+        <b-row align-h="center">
+          <h2 class="h-plan-options">1. Pick A Plan</h2>
+        </b-row>
+        <b-row align-h="center">Pay with Paypal or Credit Card</b-row>
         <Plan
           @changeDisplay="setActive($event)"
           @asetActive="bsetActive($event)"
         ></Plan>
-        <div v-if="active === true">
-          <h2 class="h-plan-options">2. Choose A Membership</h2>
-          <Plan2 :set-active-one-time="activeOneTime"></Plan2>
-        </div>
+        <b-row align-h="center">
+          <div v-if="active === true">
+            <b-row align-h="center">
+              <h2 class="h-plan-options">2. Choose A Membership</h2>
+            </b-row>
+            <Plan2 :set-active-one-time="activeOneTime"></Plan2>
+          </div>
+        </b-row>
       </b-col>
     </b-row>
   </b-container>
@@ -42,11 +40,13 @@
 import levels from '@/components/investors/levels.vue'
 import plan from '@/components/investors/plan.vue'
 import plan2 from '@/components/investors/plan2.vue'
+import CategoryHeader from '@/components/CategoryHeader'
 export default {
   components: {
     Levels: levels,
     Plan: plan,
-    Plan2: plan2
+    Plan2: plan2,
+    'Category-Header': CategoryHeader
   },
   data() {
     return {
@@ -109,9 +109,14 @@ export default {
   border-radius: 30px;
   box-shadow: 3px 3px black;
   height: 200px;
-  left: 25%;
   position: relative;
   width: 300px;
+}
+.center-content {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 .dash {
   border-color: #56a3a6;

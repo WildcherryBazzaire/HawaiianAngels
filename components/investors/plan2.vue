@@ -1,5 +1,5 @@
 <template>
-  <b-row align-h="end">
+  <b-row align-h="center">
     <b-col>
       <div class="oneTime">
         <img :src="content[1].image" />
@@ -10,7 +10,9 @@
         <h2 class="h-plan-name">{{ content[0].planName }}</h2>
       </div>
     </b-col>
-    <div class="divider"></div>
+    <b-row align-h="center">
+      <div class="divider"></div>
+    </b-row>
     <b-col v-if="setActiveOneTime === true">
       <div>
         <h3>IT WORKS WOOMIES FOR EVERYONE!!!</h3>
@@ -66,7 +68,6 @@ export default {
 }
 .h-plan-options {
   color: #56a3a6;
-  margin-top: 100px;
 }
 #main-choose-this-plan {
   align-items: center;
