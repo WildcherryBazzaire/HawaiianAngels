@@ -10,7 +10,7 @@
           >Investors</b-nav-item
         >
         <b-nav-item class="header-items px-5" to="/entrepreneurs"
-          >IEntreprenuers</b-nav-item
+          >Entreprenuers</b-nav-item
         >
         <b-nav-item class="header-items px-5" to="/sponsors"
           >Sponsors</b-nav-item
@@ -25,20 +25,23 @@
 </template>
 
 <script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 export default {
-  // mounted() {
-  //   window.addEventListener('scroll', e => {
-  //     const scrollPos = window.scrollY
-  //     const winHeight = window.innerHeight
-  //     const docHeight = document.documentElement.scrollHeight
-  //     const perc = (100 * scrollPos) / (docHeight - winHeight)
-  //     if (perc >= 26) {
-  //       this.$refs.headerMain.className =
-  //         'header-main-scroll navbar px-4 py-1 navbar-light navbar-expand'
-  //       this.$refs.headerContent.className = 'navbar-nav float-right my-auto'
-  //     }
-  //   })
-  // }
+  beforeMount() {
+    AOS.init()
+    // window.addEventListener('scroll', e => {
+    //   const scrollPos = window.scrollY
+    //   const winHeight = window.innerHeight
+    //   const docHeight = document.documentElement.scrollHeight
+    //   const perc = (100 * scrollPos) / (docHeight - winHeight)
+    //   if (perc >= 26) {
+    //     this.$refs.headerMain.className =
+    //       'header-main-scroll navbar px-4 py-1 navbar-light navbar-expand'
+    //     this.$refs.headerContent.className = 'navbar-nav float-right my-auto'
+    //   }
+    // })
+  }
 }
 </script>
 
@@ -53,6 +56,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background: #fcfcfc;
 }
 
 *,
@@ -108,7 +112,7 @@ html {
   content: '';
   bottom: 5%;
   position: absolute;
-  width: 100%;
+  width: 75%;
   padding-top: 0.1rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
