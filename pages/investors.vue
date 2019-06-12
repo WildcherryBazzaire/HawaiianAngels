@@ -15,22 +15,26 @@
       </template>
       <b-col sm="12">
         <b-col sm="2" offset-sm="5">
-          <b-button id="b-get-started">Get Started</b-button>
+          <b-button id="b-get-started" @click="setActive(true)"
+            >Get Started</b-button
+          >
         </b-col>
       </b-col>
       <b-col>
-        <Category-Header :content="'Become a Member'" />
+        <div v-if="active === true">
+          <Category-Header :content="'Become a Member'" />
+          <b-row align-h="center">
+            <h2 class="h-plan-options">1. Pick A Plan</h2>
+          </b-row>
+          <b-row align-h="center">Pay with Paypal or Credit Card</b-row>
+          <Plan
+            @changeDisplay="setActive($event)"
+            @setActiveOneTime="activedOneTime($event)"
+            @setActiveReoccuring="activedReoccuring($event)"
+          ></Plan>
+        </div>
         <b-row align-h="center">
-          <h2 class="h-plan-options">1. Pick A Plan</h2>
-        </b-row>
-        <b-row align-h="center">Pay with Paypal or Credit Card</b-row>
-        <Plan
-          @changeDisplay="setActive($event)"
-          @setActiveOneTime="activedOneTime($event)"
-          @setActiveReoccuring="activedReoccuring($event)"
-        ></Plan>
-        <b-row align-h="center">
-          <div v-if="active === true">
+          <div v-if="activeOneTime === true || activeReoccuring === true">
             <b-row align-h="center">
               <h2 class="h-plan-options">2. Choose A Membership</h2>
             </b-row>
@@ -157,5 +161,11 @@ h1 {
 }
 #main {
   max-width: 100%;
+}
+</style>
+<style scoped>
+div {
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 </style>
