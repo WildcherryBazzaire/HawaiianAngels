@@ -12,7 +12,12 @@
           <p>- Refresh your yearly plan</p>
           <p>- Save $50 off</p>
 
-          <b-button class="b-choose-this-plan" @click="openReoccuring()"
+          <b-button
+            class="b-choose-this-plan"
+            @click="
+              openReoccuring()
+              openDisplay()
+            "
             >Choose this Plan</b-button
           >
         </b-card>
@@ -34,7 +39,7 @@
             class="b-choose-this-plan"
             @click="
               openOneTime()
-              openReoccuring()
+              openDisplay()
             "
             >Choose this Plan</b-button
           >
@@ -63,11 +68,16 @@ export default {
     }
   },
   methods: {
-    openReoccuring: function() {
+    openDisplay: function() {
       this.$emit('changeDisplay', true)
     },
     openOneTime: function() {
-      this.$emit('asetActive', true)
+      this.$emit('setActiveOneTime', true)
+      this.$emit('setActiveReoccuring', false)
+    },
+    openReoccuring: function() {
+      this.$emit('setActiveReoccuring', true)
+      this.$emit('setActiveOneTime', false)
     }
   }
 }

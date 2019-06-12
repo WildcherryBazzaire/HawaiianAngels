@@ -30,7 +30,7 @@
         </b-row>
       </b-col>
       <b-col sm="6" class="image">
-        <img :src="image" />
+        <img class="image-size" :src="image" />
       </b-col>
     </b-row>
   </b-col>
@@ -66,6 +66,9 @@ export default {
 .image {
   position: absolute;
 }
+.image-size {
+  height: 100px;
+}
 .line {
   color: red;
   height: 25px;
@@ -77,11 +80,11 @@ export default {
   border-radius: 10px;
   box-shadow: -30px 20px #db4c40;
   height: 300px;
-  margin-bottom: 5%;
-  margin-top: 5%;
+  margin-bottom: 2%;
+  margin-top: 2%;
   max-width: 100%;
   padding: 10px;
   text-align: left;
-  width: 500px;
+  width: 100px;
 }
 </style>

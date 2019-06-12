@@ -1,25 +1,27 @@
 <template>
   <b-row align-h="center">
     <b-col>
-      <div class="oneTime">
+      <b-row v-if="propOneTime === true" class="oneTime" align-h="center">
         <img :src="content[1].image" />
         <h2 class="h-plan-name">{{ content[1].planName }}</h2>
-      </div>
-      <div>
+      </b-row>
+      <b-row v-if="propReoccuring === true" class="reoccuring" align-h="center">
         <img :src="content[0].image" />
         <h2 class="h-plan-name">{{ content[0].planName }}</h2>
-      </div>
+      </b-row>
     </b-col>
     <b-row align-h="center">
       <div class="divider"></div>
     </b-row>
-    <b-col v-if="setActiveOneTime === true">
-      <div>
-        <h3>IT WORKS WOOMIES FOR EVERYONE!!!</h3>
-      </div>
-      <div>
-        <h3>This is for reoccurintg</h3>
-      </div>
+    <b-col v-if="propOneTime === true">
+      <b-row align-h="center">
+        <h3>One Time Stuff</h3>
+      </b-row>
+    </b-col>
+    <b-col v-if="propReoccuring === true">
+      <b-row align-h="center">
+        <h3>This is for reoccuring</h3>
+      </b-row>
     </b-col>
   </b-row>
 </template>
@@ -28,7 +30,8 @@
 // import bus from '@/components/investors/bus'
 export default {
   props: {
-    setActiveOneTime: Boolean
+    propOneTime: Boolean,
+    propReoccuring: Boolean
   },
   data() {
     return {

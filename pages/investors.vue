@@ -21,14 +21,18 @@
         <b-row align-h="center">Pay with Paypal or Credit Card</b-row>
         <Plan
           @changeDisplay="setActive($event)"
-          @asetActive="bsetActive($event)"
+          @setActiveOneTime="activedOneTime($event)"
+          @setActiveReoccuring="activedReoccuring($event)"
         ></Plan>
         <b-row align-h="center">
           <div v-if="active === true">
             <b-row align-h="center">
               <h2 class="h-plan-options">2. Choose A Membership</h2>
             </b-row>
-            <Plan2 :set-active-one-time="activeOneTime"></Plan2>
+            <Plan2
+              :prop-one-time="activeOneTime"
+              :prop-reoccuring="activeReoccuring"
+            ></Plan2>
           </div>
         </b-row>
       </b-col>
@@ -51,6 +55,7 @@ export default {
   data() {
     return {
       activeOneTime: false,
+      activeReoccuring: false,
       active: false,
       content: [
         {
@@ -96,8 +101,11 @@ export default {
     setActive: function(parm) {
       this.active = parm
     },
-    bsetActive: function(parm) {
+    activedOneTime: function(parm) {
       this.activeOneTime = parm
+    },
+    activedReoccuring: function(parm) {
+      this.activeReoccuring = parm
     }
   }
 }
