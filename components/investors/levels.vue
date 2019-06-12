@@ -1,38 +1,13 @@
 <template>
-  <b-col sm="12" class="main-card">
-    <b-row>
-      <b-col>
-        <b-row class="row-fix">
-          <b-col md="12" offset-md="4"
-            ><h2 class="h-text">{{ header }}</h2></b-col
-          >
-        </b-row>
-        <b-row class="row-fix">
-          <b-col md="12" offset-md="5">
-            <h2 class="line">________</h2>
-          </b-col>
-        </b-row>
-        <b-row class="row-fix">
-          <b-col md="12" offset-md="5">
-            <p class="c-text">{{ text }}</p>
-          </b-col>
-        </b-row>
-        <b-row class="row-fix">
-          <b-col md="12" offset-md="4">
-            <h2>Annual Cost</h2>
-          </b-col>
-        </b-row>
-        <b-row id="cost-t" class="row-fix">
-          <b-col class="cost-t">{{ cost.headOne }}</b-col>
-          <b-col class="cost-t">{{ cost.textOne }}</b-col>
-          <b-col class="cost-t">{{ cost.headTwo }}</b-col>
-          <b-col class="cost-t">{{ cost.textTwo }}</b-col>
-        </b-row>
-      </b-col>
-      <b-col sm="6" class="image">
-        <img class="image-size" :src="image" />
-      </b-col>
-    </b-row>
+  <b-col sm="4" class="cursed">
+    <div class="main-card">
+      <b-row>
+        <b-col sm="6" class="image">
+          <img class="image-size" :src="image" />
+        </b-col>
+      </b-row>
+    </div>
+    <div class="custom-box-shadow"></div>
   </b-col>
 </template>
 
@@ -63,6 +38,29 @@ export default {
 .cost-t {
   max-width: 150px;
 }
+.cursed {
+  max-height: 500px;
+}
+.custom-box-shadow {
+  background-image: radial-gradient(#ff6961 20%, transparent 0),
+    radial-gradient(#ff6961 20%, transparent 0);
+  background-size: 16px 16px;
+  background-position: 0 0, 12px 12px;
+  border: transparent 1px;
+  border-radius: 10px;
+  height: 450px;
+  right: 10%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 2%;
+  padding: 10px;
+  position: relative;
+  text-align: left;
+  bottom: 80%;
+  width: 300px;
+  z-index: 2;
+}
 .image {
   position: absolute;
 }
@@ -76,15 +74,18 @@ export default {
   top: -50%;
 }
 .main-card {
+  background-color: white;
   border: solid 1px;
   border-radius: 10px;
-  box-shadow: -30px 20px #db4c40;
-  height: 300px;
+  height: 450px;
   margin-bottom: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
   margin-top: 2%;
-  max-width: 100%;
   padding: 10px;
+  position: relative;
   text-align: left;
-  width: 100px;
+  width: 300px;
+  z-index: 5;
 }
 </style>

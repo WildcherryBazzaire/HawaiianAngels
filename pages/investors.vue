@@ -1,7 +1,7 @@
 <template>
   <b-container class="main">
     <b-row>
-      <b-col>
+      <b-col sm="12">
         <Category-Header :content="'Membership Levels'" />
       </b-col>
       <template v-for="x in content">
@@ -13,6 +13,11 @@
           :image="x.image"
         ></Levels>
       </template>
+      <b-col sm="12">
+        <b-col sm="2" offset-sm="5">
+          <b-button id="b-get-started">Get Started</b-button>
+        </b-col>
+      </b-col>
       <b-col>
         <Category-Header :content="'Become a Member'" />
         <b-row align-h="center">
@@ -112,6 +117,12 @@ export default {
 </script>
 
 <style>
+#b-get-started {
+  margin-top: 40%;
+  background-color: #de8f11;
+  position: relative;
+  z-index: 6;
+}
 .box {
   border: 1px solid;
   border-radius: 30px;
