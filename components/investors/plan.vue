@@ -84,13 +84,6 @@ export default {
 </script>
 
 <style>
-@keyframes goUp {
-  0% {
-  }
-  25% {
-  }
-}
-
 .b-choose-this-plan {
   background-color: #de8f11;
   border-radius: 20px;

@@ -15,13 +15,18 @@
       </template>
       <b-col sm="12">
         <b-col sm="2" offset-sm="5">
-          <b-button id="b-get-started" @click="setActive(true)"
+          <b-button
+            id="b-get-started"
+            @click="
+              setActive(true)
+              changeClass()
+            "
             >Get Started</b-button
           >
         </b-col>
       </b-col>
       <b-col>
-        <div v-if="active === true">
+        <div v-if="active === true" id="target">
           <Category-Header :content="'Become a Member'" />
           <b-row align-h="center">
             <h2 class="h-plan-options">1. Pick A Plan</h2>
@@ -115,12 +120,32 @@ export default {
     },
     activedReoccuring: function(parm) {
       this.activeReoccuring = parm
+    },
+    changeClass: function() {
+      const element = document.getElementById('target')
+      element.classList.toggle = 'goUp'
     }
   }
 }
 </script>
 
 <style>
+#target {
+  z-index: 7;
+}
+.goUp {
+  animation-name: goUp;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes goUp {
+  0% {
+    top: initial;
+  }
+  25% {
+    top: 100%;
+  }
+}
 #b-get-started {
   margin-top: 40%;
   background-color: #de8f11;
