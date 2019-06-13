@@ -8,7 +8,9 @@
         <b-col sm="6" class="top-content">
           <b-row align-h="center">
             <b-col class="over">
-              <b-row align-h="center"><h2>Stay in Touch</h2></b-row>
+              <b-row align-h="center" :style="{ 'margin-bottom': '30px' }"
+                ><h2>Stay in Touch</h2></b-row
+              >
               <b-row>
                 <b-col offset-sm="1">We Can't Wait to Hear From You!</b-col>
               </b-row>
@@ -26,8 +28,20 @@
                   >335 Merchant Street, #516 Honolulu, HI 96813</b-col
                 >
               </b-row>
-              <b-row>
+              <b-row :style="{ 'margin-top': '100px' }">
                 <b-col offset-sm="1">Social Media</b-col>
+              </b-row>
+              <b-row class="left-side">
+                <b-col offset-sm="2"
+                  ><img :src="facebook" :style="{ height: '50px' }"
+                /></b-col>
+                <b-col sm="8" offset-sm="12">Like us on Facebook</b-col>
+              </b-row>
+              <b-row class="left-side">
+                <b-col offset-sm="2"
+                  ><img :src="twitter" :style="{ height: '50px' }"
+                /></b-col>
+                <b-col sm="8" offset-sm="12">Follow us on Twitter</b-col>
               </b-row>
             </b-col>
           </b-row>
@@ -83,7 +97,9 @@ export default {
     return {
       image: require('@/assets/contact-us/map.png'),
       phone: require('@/assets/contact-us/phone.svg'),
-      address: require('@/assets/contact-us/address.svg')
+      address: require('@/assets/contact-us/address.svg'),
+      facebook: require('@/assets/contact-us/facebook.png'),
+      twitter: require('@/assets/contact-us/twiiter.png')
     }
   }
 }
