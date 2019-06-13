@@ -1,6 +1,6 @@
 <template>
   <b-container class="main">
-    <b-row class="overview">
+    <b-row class="overview" :style="{ opacity: opacity }">
       <Category-Header :content="'Membership Levels'" />
       <b-col sm="12">
         <b-row>
@@ -16,7 +16,7 @@
           </template>
           <b-col sm="12">
             <b-col sm="2" offset-sm="5">
-              <b-button id="b-get-started" @click="setActive(true)"
+              <b-button id="b-get-started" @click="setActive(true), opacity--"
                 >Get Started</b-button
               >
             </b-col>
@@ -24,6 +24,7 @@
         </b-row>
       </b-col>
     </b-row>
+
     <b-row class="step-one">
       <b-col>
         <transition name="goUp">
@@ -74,6 +75,7 @@ export default {
       activeOneTime: false,
       activeReoccuring: false,
       active: false,
+      opacity: '1',
       content: [
         {
           header: 'Indivduals',
@@ -129,6 +131,18 @@ export default {
 </script>
 
 <style scoped>
+.hidden:active {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+.step-one {
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+}
 #target {
   z-index: 0;
   position: relative;
@@ -140,13 +154,19 @@ export default {
   animation-timing-function: ease;
   animation-fill-mode: forwards;
 }
+.upDropoff-enter-active {
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-name: upDropoff;
+}
 @keyframes goUp {
   0% {
-    position: absolute;
     bottom: 0%;
+    opacity: 0.3;
   }
   100% {
-    bottom: 100%;
+    bottom: 0%;
     position: relative;
   }
 }
@@ -160,12 +180,6 @@ export default {
     top: -100%;
     display: none;
   }
-}
-#b-get-started {
-  margin-top: 40%;
-  background-color: #de8f11;
-  position: relative;
-  z-index: 6;
 }
 .box {
   border: 1px solid;
@@ -209,5 +223,15 @@ div {
 }
 .main {
   position: relative;
+}
+.over-view {
+  position: absolute;
+  z-index: 1;
+}
+#b-get-started {
+  margin-top: 40%;
+  background-color: #de8f11;
+  position: relative;
+  z-index: 12;
 }
 </style>
