@@ -7,7 +7,12 @@
     <b-card-title class="card-title">
       <p class="my-0 h1">Tips</p>
       <p class="h4 py-0">For Presentors</p>
-      <b-img :src="require('static/AlineShortOrange.svg')"></b-img>
+      <b-link
+        href="https://www.hawaiiangels.org/uploads/2/3/4/9/23499640/presenters_toolbelt__1_.pdf"
+        target="_blank"
+      >
+        <b-img :src="require('static/AlineShortOrange.svg')"></b-img>
+      </b-link>
     </b-card-title>
   </b-card>
 </template>
@@ -41,5 +46,9 @@
 
 .card-img-bottom {
   z-index: 2;
+}
+
+.card-img-bottom:hover {
+  cursor: pointer;
 }
 </style>
