@@ -43,27 +43,46 @@
         :additional-content="'nearly 60 investments over 14 years'"
       />
       <b-col sm="12">
-        <b-row>
-          <template v-for="items in portfolioDemo">
-            <b-col :key="items.text" sm="3">
-              <Portfolio-Card :content="items" />
+        <b-container>
+          <b-row>
+            <template v-for="(items, key) in portfolioDemo">
+              <b-col v-if="key < 3" :key="items.text" class="px-0">
+                <Portfolio-Card :content="items" />
+              </b-col>
+              <b-col v-else :key="items.text" class="px-0">
+                <Portfolio-Card :content="items" />
+              </b-col>
+            </template>
+            <b-col sm="12">
+              <h1 id="view_more" offset-md="6">View More</h1>
             </b-col>
-          </template>
-          <b-col sm="12">
-            <h1 id="view_more" offset-md="6">View More</h1>
-          </b-col>
-        </b-row>
+          </b-row>
+        </b-container>
       </b-col>
       <b-col>
         <b-row>
           <Category-Header :content="'Management Team'" />
           <b-col offset-md="1" sm="12" md="3">
-            <b-img :src="require('@/static/chenoa.jpg')" fluid></b-img>
+            <b-img
+              :src="require('@/static/chenoa.jpg')"
+              fluid
+              class="manangement-image-1"
+            ></b-img>
           </b-col>
           <b-col sm="12" md="8">
             <b-row>
-              <b-col sm="12">
-                <h1>Chenoa Farnsworth</h1>
+              <b-col sm="12" class="pb-3 header-container">
+                <b-img
+                  :src="require('@/static/AlineBlue.svg')"
+                  class="management-header-line"
+                >
+                </b-img>
+                <h1 class="text-left management-name my-0">
+                  Chenoa Farnsworth
+                </h1>
+                <h4 class="text-left management-role font-weight-light">
+                  Managing Director
+                </h4>
               </b-col>
               <b-col sm="10">
                 <p class="text-left">
@@ -85,33 +104,47 @@
               </b-col>
             </b-row>
           </b-col>
-          <b-col offset-md="1" sm="12" md="8">
+          <b-col offset-md="1" sm="12" md="7">
             <b-row>
-              <b-col sm="12">
-                <h1>Chenoa Farnsworth</h1>
+              <b-col class="px-5 pb-3 header-container" sm="12">
+                <b-img
+                  :src="require('@/static/AlineBlue.svg')"
+                  class="management-header-line"
+                >
+                </b-img>
+                <h1 class="text-left management-name my-0">
+                  Robert J. Robinson
+                </h1>
+                <h4 class="text-left management-role font-weight-light">
+                  President
+                </h4>
               </b-col>
               <b-col sm="10">
                 <p class="text-left">
-                  Chenoa Farnsworth was one of the founding members of Hawaii
-                  Angels in 2002. Chenoa has more than 15 years experience in
-                  business strategy and private equity investing. Farnsworth is
-                  the managing director at Blue Startups, Hawaii’s only angel
-                  capital investment network. In 2006, she co-founded Kolohala
-                  Ventures, a Hawai’i-based venture capital firm that has
-                  invested $50 million into Hawai’i-based technology start-ups.
+                  Hawaii Angels was founded as UH Angels by Robert J. Robinson,
+                  Ph.D. Dr. Robinson is the Barry and Virginia Weinman
+                  Distinguished Professor of Entrepreneurship and E-Business at
+                  the University of Hawai`i, Shidler College of Business. He was
+                  previously on the faculty of the Harvard Graduate School of
+                  Business Administration.
                   <br />
                   <br />
-                  Ms. Farnsworth has reviewed hundreds of business plans and
-                  helped her start-up clients raise over $30 million in
-                  financing. Ms. Farnsworth earned a BA in political science
-                  from the University of California at Santa Cruz in 1992 and an
-                  Executive MBA from the University of Hawaii in 2000.
+                  Robert J. Robinson, Ph.D. is a nationally recognized expert on
+                  angel investing, co-author of Angel Investing: Matching
+                  Startup Funds with Startup Companies. He is also an
+                  award-winning author on business negotiation and conflict
+                  management, and has over 20 years of experience in coaching
+                  companies in valuation and other negotiations.
                 </p>
               </b-col>
             </b-row>
           </b-col>
           <b-col pull-md="1" sm="12" md="3">
-            <b-img :src="require('@/static/chenoa.jpg')" fluid></b-img>
+            <b-img
+              :src="require('@/static/robert.jpg')"
+              fluid
+              class="manangement-image-2"
+            ></b-img>
           </b-col>
         </b-row>
       </b-col>
@@ -169,42 +202,6 @@ export default {
           image: require('@/static/images/Maclear.png'),
           name: 'Maclear',
           text: 'Maclear’s enterprise, governance, risk and compliance (eGRC)'
-        },
-        {
-          image: require('@/static/images/Findable_EXIT.png'),
-          name: 'Findable',
-          text:
-            'Headquartered in Silicon Valley, California, Findables uses creative tech'
-        },
-        {
-          image: require('@/static/images/Tealet.png'),
-          name: 'Tealet',
-          text:
-            'Tealet is a direct-from-grower e-commerce marketplace that allows...'
-        },
-        {
-          image: require('@/static/images/Contix.png'),
-          name: 'Contix',
-          text:
-            'Contixs mission is to provide value to traders and invenstors...'
-        },
-        {
-          image: require('@/static/images/Mile_High_Organics.png'),
-          name: 'Mile High Organic',
-          text:
-            'Mile High Organics is Americas first certified organic online grocery store..'
-        },
-        {
-          image: require('@/static/images/Volta.png'),
-          name: 'Volta',
-          text:
-            'Volta Industries builds public, free-to-use electric vehicle charging networks...'
-        },
-        {
-          image: require('@/static/images/Tetris_Online.png'),
-          name: 'Tetris Online',
-          text:
-            'Tetris Online, Inc. is the exclusive online license of The Tetris Company...'
         }
       ]
     }
@@ -286,6 +283,7 @@ export default {
 #AlineCurve {
   right: 0%;
 }
+
 #view_more {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -295,5 +293,35 @@ export default {
   text-align: center;
   margin-top: 5%;
   margin-bottom: 2%;
+}
+
+.manangement-image-1,
+.manangement-image-2 {
+  border-radius: 0.625rem;
+  margin: auto;
+}
+
+p,
+h1,
+h4 {
+  color: #4f4e4c;
+}
+
+.manangement-image-1 {
+  box-shadow: -16px 14px 0px rgba(219, 76, 64, 0.6);
+}
+
+.manangement-image-2 {
+  box-shadow: 16px 14px 0px rgba(219, 76, 64, 0.6);
+}
+
+.header-container {
+  position: relative;
+}
+
+.management-header-line {
+  position: absolute;
+  bottom: 14%;
+  left: 6%;
 }
 </style>

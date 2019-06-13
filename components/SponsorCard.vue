@@ -51,6 +51,9 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  color: #b70304;
+}
 .text-left {
   position: relative;
 }
