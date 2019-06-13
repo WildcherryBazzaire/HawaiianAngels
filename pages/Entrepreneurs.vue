@@ -57,6 +57,7 @@
         </b-row>
       </b-col>
     </b-row>
+    <b-row align-h="center"> </b-row>
   </b-container>
 </template>
 

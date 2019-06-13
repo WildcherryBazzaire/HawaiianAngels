@@ -6,7 +6,7 @@
       </b-navbar-brand>
       <b-navbar-nav ref="headerContent" class="float-right">
         <b-nav-item class="header-items px-5" to="/">Home</b-nav-item>
-        <b-nav-item class="header-items px-5" to="/investor"
+        <b-nav-item class="header-items px-5" to="/investors"
           >Investors</b-nav-item
         >
         <b-nav-item class="header-items px-5" to="/entrepreneurs"
@@ -17,6 +17,9 @@
         >
         <b-nav-item class="header-items px-5" to="/portfolio"
           >Portfolio</b-nav-item
+        >
+        <b-nav-item class="header-items px-5" to="/contactUs"
+          >Contact Us</b-nav-item
         >
       </b-navbar-nav>
     </b-navbar>

@@ -12,7 +12,7 @@
   </b-card>
 </template>
 
-<style>
+<style scoped>
 .card-title {
   position: relative;
 }
