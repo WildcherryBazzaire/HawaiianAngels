@@ -25,7 +25,12 @@
 <script>
 export default {
   props: {
-    content: Object
+    content: {
+      default: function() {
+        return {}
+      },
+      type: Object
+    }
   }
 }
 </script>

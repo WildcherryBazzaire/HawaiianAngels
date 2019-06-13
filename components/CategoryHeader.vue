@@ -17,8 +17,14 @@
 <script>
 export default {
   props: {
-    content: String,
-    additionalContent: String
+    content: {
+      default: 'insert text',
+      type: String
+    },
+    additionalContent: {
+      default: '',
+      type: String
+    }
   }
 }
 </script>

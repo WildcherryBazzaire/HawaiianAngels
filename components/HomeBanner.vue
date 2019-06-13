@@ -12,7 +12,10 @@
               </p>
             </b-col>
             <b-col>
-              <b-button class="btn-warning text-white" size="md"
+              <b-button
+                class="btn-warning text-white"
+                size="md"
+                to="/entrepreneurs"
                 >Pitch the Angels</b-button
               >
             </b-col>

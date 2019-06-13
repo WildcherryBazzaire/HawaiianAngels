@@ -56,8 +56,16 @@
 <script>
 export default {
   props: {
-    position: Number,
-    content: Object
+    position: {
+      default: null,
+      type: Number
+    },
+    content: {
+      default: function() {
+        return {}
+      },
+      type: Object
+    }
   }
 }
 </script>
