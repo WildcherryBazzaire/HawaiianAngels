@@ -1,25 +1,23 @@
 <template>
-  <div class="card-root-container">
+  <div class="card-root-container mx-auto">
     <div class="card-inner-container">
       <div
         class="card-front"
         :style="'background-image:url(' + content.image + ');'"
       ></div>
-      <div class="card-back" style="text-align:center;">
-        <div class="back-card-content">
-          <b-row>
-            <b-col sm="12">
-              <p>{{ content.name }}</p>
-            </b-col>
-            <b-col sm="12">
-              <p>{{ content.text }}</p>
-            </b-col>
-            <b-col sm="12">
-              <a href="#">Learn More</a>
-            </b-col>
-          </b-row>
-        </div>
-      </div>
+      <b-container class="card-back" style="text-align:center;" fluid>
+        <b-row>
+          <b-col sm="12">
+            <p>{{ content.name }}</p>
+          </b-col>
+          <b-col sm="12">
+            <p>{{ content.text }}</p>
+          </b-col>
+          <b-col sm="12">
+            <a href="#">Learn More</a>
+          </b-col>
+        </b-row>
+      </b-container>
     </div>
   </div>
 </template>
@@ -94,29 +92,29 @@ export default {
 
 /*add the keyframes */
 .card-root-container {
-  height: 12rem;
-  width: 12rem;
+  height: 16rem;
+  width: 16rem;
   margin: 2%;
 }
 .card-inner-container,
 .card-front,
 .card-back {
-  width: 12rem;
-  height: 12rem;
+  width: 16rem;
+  height: 16rem;
   overflow: hidden;
 }
 
 .card-inner-container::before {
   position: absolute;
-  top: -4px;
-  right: -4px;
-  bottom: -4px;
-  left: -4px;
+  top: -0.625rem;
+  right: -0.625rem;
+  bottom: -0.625rem;
+  left: -0.625rem;
   transform: rotate(45deg);
   content: '';
   border: inherit;
   transform: rotate(45deg);
-  border-radius: 5rem;
+  border-radius: 0.625rem;
   z-index: 2;
 }
 
@@ -147,8 +145,8 @@ export default {
   bottom: 0;
   left: 0;
   overflow: hidden;
-  border: 5px solid #56a3a6;
-  border-radius: 5rem;
+  border: 0.625rem solid #56a3a6;
+  border-radius: 0.625rem;
 }
 
 .card-front,
