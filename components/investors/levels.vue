@@ -5,6 +5,18 @@
         <b-col sm="6" class="image">
           <img class="image-size" :src="image" />
         </b-col>
+        <b-col sm="6">
+          <h3>{{ header }}</h3>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col>{{ text }}</b-col>
+      </b-row>
+      <b-row>
+        <b-col>{{ cost.headOne }} {{ cost.textOne }}</b-col>
+      </b-row>
+      <b-row>
+        <b-col>{{ cost.headTwo }} {{ cost.textTwo }}</b-col>
       </b-row>
     </div>
     <div class="custom-box-shadow"></div>
@@ -44,7 +56,7 @@ export default {
 .custom-box-shadow {
   background-image: radial-gradient(#ff6961 20%, transparent 0),
     radial-gradient(#ff6961 20%, transparent 0);
-  background-size: 24px 24px;
+  background-size: 8px 8px;
   background-position: 0 0, 12px 12px;
   border: transparent 1px;
   border-radius: 10px;
@@ -60,9 +72,6 @@ export default {
   bottom: 80%;
   width: 330px;
   z-index: 2;
-}
-.image {
-  position: absolute;
 }
 .image-size {
   height: 100px;
