@@ -1,26 +1,30 @@
 <template>
   <b-container class="main">
-    <b-row>
+    <b-row class="overview">
+      <Category-Header :content="'Membership Levels'" />
       <b-col sm="12">
-        <Category-Header :content="'Membership Levels'" />
+        <b-row>
+          <template v-for="x in content">
+            <Levels
+              :key="x"
+              class="levels"
+              :header="x.header"
+              :text="x.text"
+              :cost="x.cost"
+              :image="x.image"
+            ></Levels>
+          </template>
+          <b-col sm="12">
+            <b-col sm="2" offset-sm="5">
+              <b-button id="b-get-started" @click="setActive(true)"
+                >Get Started</b-button
+              >
+            </b-col>
+          </b-col>
+        </b-row>
       </b-col>
-      <template v-for="x in content">
-        <Levels
-          :key="x"
-          class="levels"
-          :header="x.header"
-          :text="x.text"
-          :cost="x.cost"
-          :image="x.image"
-        ></Levels>
-      </template>
-      <b-col sm="12">
-        <b-col sm="2" offset-sm="5">
-          <b-button id="b-get-started" @click="setActive(true)"
-            >Get Started</b-button
-          >
-        </b-col>
-      </b-col>
+    </b-row>
+    <b-row class="step-one">
       <b-col>
         <transition name="goUp">
           <div v-if="active === true" id="target">
@@ -124,31 +128,37 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #target {
-  z-index: 7;
+  z-index: 0;
   position: relative;
 }
 .goUp-enter-active {
+  z-index: 1;
   animation-name: goUp;
   animation-duration: 2s;
+  animation-timing-function: ease;
   animation-fill-mode: forwards;
 }
 @keyframes goUp {
   0% {
-    transform: translateY(0);
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.2);
-    opacity: 1;
+    position: absolute;
+    bottom: 0%;
   }
   100% {
-    transform: translateY(-2500px);
-    transform: 1;
-    transition: all;
+    bottom: 100%;
+    position: relative;
+  }
+}
+
+@keyframes upDropoff {
+  0% {
+    position: absolute;
+    top: 0%;
+  }
+  100% {
     top: -100%;
+    display: none;
   }
 }
 #b-get-started {
@@ -193,10 +203,11 @@ h1 {
   max-width: 100%;
   position: relative;
 }
-</style>
-<style scoped>
 div {
   overflow-y: hidden;
   overflow-x: hidden;
+}
+.main {
+  position: relative;
 }
 </style>
