@@ -88,14 +88,17 @@
     <div class="triangle"></div>
     <img class="redLine" :src="redLine" />
     <img class="orangeLine" :src="orangeLine" />
+    <Footer></Footer>
   </b-col>
 </template>
 
 <script>
 import CategoryHeader from '@/components/CategoryHeader'
+import footer from '@/components/footer.vue'
 export default {
   components: {
-    'Category-Header': CategoryHeader
+    'Category-Header': CategoryHeader,
+    Footer: footer
   },
   data() {
     return {

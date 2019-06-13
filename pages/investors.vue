@@ -7,6 +7,7 @@
       <template v-for="x in content">
         <Levels
           :key="x"
+          class="levels"
           :header="x.header"
           :text="x.text"
           :cost="x.cost"
@@ -76,7 +77,7 @@ export default {
             'Accredited investors that will be investing with their own capital.',
           cost: {
             headOne: 'In-State:',
-            headTwo: 'Out-of-State',
+            headTwo: 'Out-of-State:',
             textOne: '$1,500',
             textTwo: '$750'
           },
@@ -147,6 +148,7 @@ export default {
     transform: translateY(-2500px);
     transform: 1;
     transition: all;
+    top: -100%;
   }
 }
 #b-get-started {
@@ -189,6 +191,7 @@ h1 {
 }
 #main {
   max-width: 100%;
+  position: relative;
 }
 </style>
 <style scoped>

@@ -18,6 +18,9 @@
         <b-nav-item class="header-items px-5" to="/portfolio"
           >Portfolio</b-nav-item
         >
+        <b-nav-item class="header-items px-5" to="/contactUs"
+          >Contact Us</b-nav-item
+        >
       </b-navbar-nav>
     </b-navbar>
     <nuxt />

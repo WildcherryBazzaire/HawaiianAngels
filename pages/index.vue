@@ -116,6 +116,7 @@
         </b-row>
       </b-col>
     </b-row>
+    <Footer></Footer>
   </b-container>
 </template>
 
@@ -123,11 +124,13 @@
 import HomeBanner from '@/components/HomeBanner.vue'
 import PortfolioCard from '@/components/PortfolioCard.vue'
 import CategoryHeader from '@/components/CategoryHeader.vue'
+import footer from '@/components/footer.vue'
 export default {
   components: {
     'Home-Banner': HomeBanner,
     'Portfolio-Card': PortfolioCard,
-    'Category-Header': CategoryHeader
+    'Category-Header': CategoryHeader,
+    Footer: footer
   },
   data() {
     return {
