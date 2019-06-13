@@ -15,29 +15,27 @@
       </template>
       <b-col sm="12">
         <b-col sm="2" offset-sm="5">
-          <b-button
-            id="b-get-started"
-            @click="
-              setActive(true)
-              changeClass()
-            "
+          <b-button id="b-get-started" @click="setActive(true)"
             >Get Started</b-button
           >
         </b-col>
       </b-col>
       <b-col>
-        <div v-if="active === true" id="target">
-          <Category-Header :content="'Become a Member'" />
-          <b-row align-h="center">
-            <h2 class="h-plan-options">1. Pick A Plan</h2>
-          </b-row>
-          <b-row align-h="center">Pay with Paypal or Credit Card</b-row>
-          <Plan
-            @changeDisplay="setActive($event)"
-            @setActiveOneTime="activedOneTime($event)"
-            @setActiveReoccuring="activedReoccuring($event)"
-          ></Plan>
-        </div>
+        <transition name="goUp">
+          <div v-if="active === true" id="target">
+            <Category-Header :content="'Become a Member'" />
+            <b-row align-h="center">
+              <h2 class="h-plan-options">1. Pick A Plan</h2>
+            </b-row>
+            <b-row align-h="center">Pay with Paypal or Credit Card</b-row>
+
+            <Plan
+              @changeDisplay="setActive($event)"
+              @setActiveOneTime="activedOneTime($event)"
+              @setActiveReoccuring="activedReoccuring($event)"
+            ></Plan>
+          </div>
+        </transition>
         <b-row align-h="center">
           <div v-if="activeOneTime === true || activeReoccuring === true">
             <b-row align-h="center">
@@ -120,10 +118,6 @@ export default {
     },
     activedReoccuring: function(parm) {
       this.activeReoccuring = parm
-    },
-    changeClass: function() {
-      const element = document.getElementById('target')
-      element.classList.toggle = 'goUp'
     }
   }
 }
@@ -132,18 +126,27 @@ export default {
 <style>
 #target {
   z-index: 7;
+  position: relative;
 }
-.goUp {
+.goUp-enter-active {
   animation-name: goUp;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
 @keyframes goUp {
   0% {
-    top: initial;
+    transform: translateY(0);
+    transform: scale(0.1);
+    opacity: 0;
   }
-  25% {
-    top: 100%;
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-2500px);
+    transform: 1;
+    transition: all;
   }
 }
 #b-get-started {
