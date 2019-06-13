@@ -44,12 +44,12 @@ export default {
 .custom-box-shadow {
   background-image: radial-gradient(#ff6961 20%, transparent 0),
     radial-gradient(#ff6961 20%, transparent 0);
-  background-size: 16px 16px;
+  background-size: 24px 24px;
   background-position: 0 0, 12px 12px;
   border: transparent 1px;
   border-radius: 10px;
   height: 450px;
-  right: 10%;
+  right: 15%;
   margin-bottom: 2%;
   margin-left: 2%;
   margin-right: 2%;
@@ -58,7 +58,7 @@ export default {
   position: relative;
   text-align: left;
   bottom: 80%;
-  width: 300px;
+  width: 330px;
   z-index: 2;
 }
 .image {
