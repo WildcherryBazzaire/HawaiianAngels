@@ -84,6 +84,10 @@
         </b-col>
       </b-row>
     </b-row>
+    <img class="rightCurve" :src="rightCurve" />
+    <div class="triangle"></div>
+    <img class="redLine" :src="redLine" />
+    <img class="orangeLine" :src="orangeLine" />
   </b-col>
 </template>
 
@@ -99,7 +103,10 @@ export default {
       phone: require('@/assets/contact-us/phone.svg'),
       address: require('@/assets/contact-us/address.svg'),
       facebook: require('@/assets/contact-us/facebook.png'),
-      twitter: require('@/assets/contact-us/twiiter.png')
+      twitter: require('@/assets/contact-us/twiiter.png'),
+      rightCurve: require('@/static/AlineCurve.svg'),
+      redLine: require('@/static/AlineShortRed.svg'),
+      orangeLine: require('@/static/AlineShortOrange.svg')
     }
   }
 }
@@ -126,6 +133,12 @@ export default {
   position: relative;
   z-index: 5;
 }
+.orangeLine {
+  position: relative;
+  bottom: 200px;
+  left: 515px;
+  z-index: 10;
+}
 .over {
   position: absolute;
   z-index: 5;
@@ -134,6 +147,16 @@ export default {
 }
 .right-side {
   margin-top: 5%;
+}
+.rightCurve {
+  position: relative;
+  bottom: 601px;
+  left: 1300px;
+}
+.redLine {
+  position: relative;
+  left: 350px;
+  bottom: 500px;
 }
 .form-field {
   width: 75%;
@@ -151,5 +174,16 @@ export default {
 .sub-btn {
   background-color: #de8f11;
   width: 75%;
+}
+.triangle {
+  bottom: 550px;
+  left: 770px;
+  position: relative;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 100px 40px 0;
+  border-color: transparent #b70304 transparent transparent;
+  z-index: 10;
 }
 </style>
