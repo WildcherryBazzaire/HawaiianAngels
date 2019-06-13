@@ -186,4 +186,8 @@ export default {
   border-color: transparent #b70304 transparent transparent;
   z-index: 10;
 }
+.left-side:hover {
+  opacity: 0.5;
+  color: red;
+}
 </style>
