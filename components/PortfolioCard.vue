@@ -8,7 +8,7 @@
       <b-container class="card-back" style="text-align:center;" fluid>
         <b-row>
           <b-col sm="12">
-            <p>{{ content.name }}</p>
+            <p class="h4">{{ content.name }}</p>
           </b-col>
           <b-col sm="12">
             <p>{{ content.text }}</p>
@@ -25,12 +25,17 @@
 <script>
 export default {
   props: {
-    content: Object
+    content: {
+      default: function() {
+        return {}
+      },
+      type: Object
+    }
   }
 }
 </script>
 
-<style>
+<style scoped>
 @keyframes minimizePicture {
   0% {
     transform: scale(1);
@@ -44,6 +49,10 @@ export default {
     opacity: 0;
     transform: scale(0.5);
   }
+}
+
+p {
+  color: #fcfcfc;
 }
 
 .top {
@@ -90,6 +99,16 @@ export default {
   }
 }
 
+.card-back {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
 /*add the keyframes */
 .card-root-container {
   height: 16rem;
@@ -97,8 +116,7 @@ export default {
   margin: 2%;
 }
 .card-inner-container,
-.card-front,
-.card-back {
+.card-front {
   width: 16rem;
   height: 16rem;
   overflow: hidden;

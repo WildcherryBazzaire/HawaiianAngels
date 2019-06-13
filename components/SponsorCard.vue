@@ -44,8 +44,16 @@
 <script>
 export default {
   props: {
-    content: Object,
-    index: Number
+    content: {
+      default: function() {
+        return {}
+      },
+      type: Object
+    },
+    index: {
+      default: null,
+      type: Number
+    }
   }
 }
 </script>

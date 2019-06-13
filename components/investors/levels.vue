@@ -26,10 +26,24 @@
 <script>
 export default {
   props: {
-    header: String,
-    text: String,
-    cost: Object,
-    image: String
+    header: {
+      default: 'Insert Text Here',
+      type: String
+    },
+    text: {
+      default: 'Insert Text Here',
+      type: String
+    },
+    cost: {
+      default: function() {
+        return {}
+      },
+      type: Object
+    },
+    image: {
+      default: 'Insert Text Here',
+      type: String
+    }
   }
 }
 </script>
