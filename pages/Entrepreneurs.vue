@@ -1,7 +1,6 @@
 <template>
   <b-container fluid class="px-0">
-    <b-jumbotron fluid header="Hawaii's Top Investors at Your Fingertips">
-    </b-jumbotron>
+    <Entre-Banner content="Hawaii's top investors at your fingertips." />
     <b-row>
       <Category-Header :content="'Application'" />
       <b-col sm="12" class="text-center">
@@ -22,16 +21,56 @@
       >
         <b-img :src="require('@/static/present.svg')" fluid></b-img>
       </b-col>
+    </b-row>
+    <b-row>
       <Category-Header :content="'Presenations'" />
+      <b-col sm="12" class="presentation-card">
+        <b-row>
+          <b-col sm="12" md="5" offset-md="1">
+            <Presentation-Cards>
+              <b-card-title class="h1">Our Criteria</b-card-title>
+              <b-card-text>
+                Hawaii Angels are looking for start-up companies with strong
+                teams, proprietary technology, and large potential markets.
+              </b-card-text>
+              <b-card-text>
+                Both Hawaii and mainland opportunities are reviewed.
+              </b-card-text>
+            </Presentation-Cards>
+          </b-col>
+          <b-col sm="12" md="5">
+            <Presentation-Cards>
+              <b-card-title class="h1">Screening Process</b-card-title>
+              <b-card-text>
+                Business plans submitted to Hawaii Angels will be reviewed by
+                the Hawaii Angels Screening Committee. Two plans are chosen each
+                month to present to the full group at the monthly Hawaii Angels
+                meeting.
+              </b-card-text>
+            </Presentation-Cards>
+          </b-col>
+        </b-row>
+        <b-row class="py-5">
+          <b-col sm="12" md="4" offset-md="4">
+            <Tip-Cards />
+          </b-col>
+        </b-row>
+      </b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
 import CategoryHeader from '@/components/CategoryHeader'
+import EntrepreneurBanner from '@/components/EntrepreneurBanner'
+import PresentationCards from '@/components/PresentationCards'
+import TipCard from '@/components/TipCard'
 export default {
   components: {
-    'Category-Header': CategoryHeader
+    'Category-Header': CategoryHeader,
+    'Entre-Banner': EntrepreneurBanner,
+    'Presentation-Cards': PresentationCards,
+    'Tip-Cards': TipCard
   },
   data() {
     return {
@@ -40,21 +79,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-h1 {
-  text-align: center;
-  font-size: 48px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 1rem;
-  padding: 5rem 0;
-  color: #fcfcfc;
-  font-weight: normal;
-}
-
-.jumbotron {
-  background: url('https://www.hawaiiangels.org/uploads/2/3/4/9/23499640/2432007_orig.jpg');
-  background-position: center;
-  background-size: cover;
-}
-</style>
