@@ -50,7 +50,7 @@
             </Presentation-Cards>
           </b-col>
         </b-row>
-        <b-row class="py-5">
+        <b-row class="pt-5 pb-2">
           <b-col sm="12" md="4" offset-md="4">
             <Tip-Cards />
           </b-col>

@@ -34,7 +34,9 @@
           Angels was co-founded by Chenoa Farnsworth who is the manager of the
           Hawaii Angels network.
         </p>
-        <b-button size="sm" style="float:right;">Become a Member</b-button>
+        <b-button size="sm" style="float:right;" class="btn-warning text-white"
+          >Become a Member</b-button
+        >
       </b-col>
     </b-row>
     <b-row>

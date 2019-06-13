@@ -28,7 +28,7 @@ export default {
   margin: auto 1rem;
   width: 53px;
   padding-top: 5px;
-  border-bottom: 0.25px solid #6cd4ff;
+  border-bottom: 2px solid #6cd4ff;
 }
 .page-headers {
   display: flex;
