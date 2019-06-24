@@ -1,6 +1,19 @@
 import pkg from './package'
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/<repository-name>/'
+  }
+} : {}
+
 export default {
+  
+  routerBase,
+
+  router: {
+    base: '/HawaiianAngels/'
+  },
+
   mode: 'universal',
 
   /*
