@@ -82,3 +82,21 @@ typings/
 
 # Service worker
 sw.*
+
+# everything else
+components/
+assets/
+layouts/
+middleware/
+pages/
+plugins/
+static/
+store/
+.editorconfig
+.eslintrc.js
+.prettierrcs
+bash.exe.stackdump
+extra.txt
+nuxt.config.js
+package-lock.json
+package.json
