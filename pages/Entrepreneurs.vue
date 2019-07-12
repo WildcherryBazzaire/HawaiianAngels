@@ -50,11 +50,6 @@
             </Presentation-Cards>
           </b-col>
         </b-row>
-        <b-row class="pt-5 pb-2">
-          <b-col sm="12" md="4" offset-md="4">
-            <Tip-Cards />
-          </b-col>
-        </b-row>
       </b-col>
     </b-row>
     <b-row align-h="center"> </b-row>
@@ -65,13 +60,11 @@
 import CategoryHeader from '@/components/CategoryHeader'
 import EntrepreneurBanner from '@/components/EntrepreneurBanner'
 import PresentationCards from '@/components/PresentationCards'
-import TipCard from '@/components/TipCard'
 export default {
   components: {
     'Category-Header': CategoryHeader,
     'Entre-Banner': EntrepreneurBanner,
-    'Presentation-Cards': PresentationCards,
-    'Tip-Cards': TipCard
+    'Presentation-Cards': PresentationCards
   },
   data() {
     return {

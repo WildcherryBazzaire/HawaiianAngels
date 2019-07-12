@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar ref="headerMain" class="header-main px-4 pb-4 py-2">
+    <b-navbar ref="headerMain" class="header-main px-4 pb-2 py-2">
       <b-navbar-brand>
         <b-img fluid :src="require('@/static/logo.svg')"></b-img>
       </b-navbar-brand>
@@ -23,6 +23,32 @@
         >
       </b-navbar-nav>
     </b-navbar>
+
+    <b-navbar ref="headerHidden" class="px-4 pb-2 py-2 header-main-scroll">
+      <b-navbar-brand>
+        <b-img fluid :src="require('@/static/logo.svg')"></b-img>
+      </b-navbar-brand>
+      <b-navbar-nav ref="headerContent" class="float-right">
+        <b-nav-item class="header-items px-5" to="/">Home</b-nav-item>
+        <b-nav-item class="header-items px-5" to="/investors"
+          >Investors</b-nav-item
+        >
+        <b-nav-item class="header-items px-5" to="/entrepreneurs"
+          >Entreprenuers</b-nav-item
+        >
+        <b-nav-item class="header-items px-5" to="/sponsors"
+          >Sponsors</b-nav-item
+        >
+        <b-nav-item class="header-items px-5" to="/portfolio"
+          >Portfolio</b-nav-item
+        >
+        <b-nav-item class="header-items px-5" to="/contactUs"
+          >Contact Us</b-nav-item
+        >
+      </b-navbar-nav>
+    </b-navbar>
+
+    <!-- For Fixed Header -->
     <nuxt />
   </div>
 </template>
@@ -31,19 +57,33 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 export default {
+  data() {
+    return {
+      onTop: true,
+      headerShown: false
+    }
+  },
   beforeMount() {
     AOS.init()
-    // window.addEventListener('scroll', e => {
-    //   const scrollPos = window.scrollY
-    //   const winHeight = window.innerHeight
-    //   const docHeight = document.documentElement.scrollHeight
-    //   const perc = (100 * scrollPos) / (docHeight - winHeight)
-    //   if (perc >= 26) {
-    //     this.$refs.headerMain.className =
-    //       'header-main-scroll navbar px-4 py-1 navbar-light navbar-expand'
-    //     this.$refs.headerContent.className = 'navbar-nav float-right my-auto'
-    //   }
-    // })
+  },
+  mounted() {
+    window.addEventListener('scroll', e => {
+      const scrollPos = window.scrollY
+      const winHeight = window.innerHeight
+      const docHeight = document.documentElement.scrollHeight
+      const perc = (100 * scrollPos) / (docHeight - winHeight)
+      if (perc >= 30 && !this.headerShown) {
+        this.onTop = false
+        this.$refs.headerHidden.style.animation = 'faseIn 1s ease fowards'
+        this.headerShown = true // eslint-disable-next-line
+        console.log("header should appear",this.$refs.headerHidden.style.animation);
+      } else if (perc < 30 && !this.onTop && this.headerShown) {
+        this.headerShown = false
+        this.$refs.headerHidden.style.animation = 'fadeOut 1s ease fowards'
+        this.onTop = true // eslint-disable-next-line
+        console.log("header should disappear")
+      }
+    })
   }
 }
 </script>
@@ -110,6 +150,8 @@ html {
 
 .header-main {
   position: relative;
+  background: #fcfcfc;
+  z-index: 4;
 }
 
 .header-main::after {
@@ -137,6 +179,7 @@ html {
   position: fixed;
   z-index: 3;
   width: 100%;
+  animation: fadeIn 1s ease forwards;
 }
 
 .header-main-scroll > ul > li > a {
@@ -151,5 +194,31 @@ html {
   position: fixed;
   top: 0%;
   color: blue;
+}
+
+.hidden-navbar {
+  display: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    top: -100%;
+  }
+  100% {
+    opacity: 1;
+    top: 0%;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    top: 0%;
+  }
+  100% {
+    opacity: 0;
+    top: -100%;
+  }
 }
 </style>
